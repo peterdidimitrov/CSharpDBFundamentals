@@ -134,3 +134,99 @@ INSERT INTO [Teachers]
 			,('Ted', 105)
 			,('Mark', 101)
 			,('Greta', 101)
+
+--5.	Online Store Database
+--Create a new database and design the following structure:
+
+CREATE DATABASE [Store]
+			USE [Store]
+   CREATE TABLE [Cities] (
+				[CityID] INT PRIMARY KEY IDENTITY (1, 1)
+				,[Name] NVARCHAR(100)
+)
+
+   CREATE TABLE [Customers] (
+				[CustomerID] INT PRIMARY KEY IDENTITY (1, 1)
+				,[Name] NVARCHAR(100)
+				,[Birthday] DATETIME2
+				,[CityID] INT FOREIGN KEY REFERENCES [Cities]([CityID])
+)
+
+   CREATE TABLE [Orders] (
+				[OrderID] INT PRIMARY KEY IDENTITY (1, 1)
+				,[CustomerID] INT FOREIGN KEY REFERENCES [Customers]([CustomerID])
+)
+
+   CREATE TABLE [ItemTypes] (
+				[ItemTypeID] INT PRIMARY KEY IDENTITY (1, 1)
+				,[Name] NVARCHAR(100)
+)
+
+   CREATE TABLE [Items] (
+				[ItemID] INT PRIMARY KEY IDENTITY (1, 1)
+				,[Name] NVARCHAR(100)
+				,[ItemTypeID] INT FOREIGN KEY REFERENCES [ItemTypes]([ItemTypeID])
+)
+
+   CREATE TABLE [OrderItems] (
+				[OrdereAndItemID] INT PRIMARY KEY ([OrderID], [ItemID]) IDENTITY(1,1)
+				,[OrderID] INT FOREIGN KEY REFERENCES [Orders]([OrderID])
+				,[ItemID] INT FOREIGN KEY REFERENCES [Items]([ItemID])
+)
+
+
+
+--6.	University Database
+--Create a new database and design the following structure:
+
+
+CREATE DATABASE [University]
+			 GO
+			USE [University]
+
+   CREATE TABLE [Majors] (
+				[MajorID] INT PRIMARY KEY IDENTITY(1,1)
+				,[Name] NVARCHAR(100)
+)
+
+   CREATE TABLE [Students] (
+				[StudentID] INT PRIMARY KEY IDENTITY (1, 1)
+				,[StudentNumber] VARCHAR(20)
+				,[StudentName] NVARCHAR(100)
+				,[MajorID] INT FOREIGN KEY REFERENCES [Majors]([MajorID])
+)
+
+   CREATE TABLE [Payments] (
+				[PaymentID] INT PRIMARY KEY IDENTITY (1, 1)
+				,[PaymentDate] DATETIME2
+				,[PaymentAmount] MONEY
+				,[StudentID] INT FOREIGN KEY REFERENCES [Students]([StudentID])
+)
+
+   CREATE TABLE [Subjects] (
+				[SubjectID] INT PRIMARY KEY IDENTITY(1,1)
+				,[SubjectName] NVARCHAR(100)
+)
+
+   CREATE TABLE [Agenda] (
+				[StudentAndSubjectID] INT PRIMARY KEY ([StudentID], [SubjectID]) IDENTITY(1,1)
+				,[StudentID] INT FOREIGN KEY REFERENCES [Students]([StudentID])
+				,[SubjectID] INT FOREIGN KEY REFERENCES [Subjects]([SubjectID])
+)
+
+--9.	*Peaks in Rila
+--Display all peaks for "Rila" mountain. Include:
+--•	MountainRange
+--•	PeakName
+--•	Elevation
+--Peaks should be sorted by elevation descending.
+
+USE [Geography]
+SELECT * FROM [Mountains]
+WHERE [MountainRange] = 'Rila';
+
+SELECT [Mountains].[MountainRange],  [Peaks].[PeakName], [Peaks].[Elevation] FROM [Peaks] 
+INNER JOIN [Mountains] ON [Mountains].[Id]=[Peaks].[MountainId]
+WHERE [MountainID] = '17'
+ORDER BY [Elevation] DESC
+
