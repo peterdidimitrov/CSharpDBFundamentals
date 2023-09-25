@@ -142,3 +142,65 @@ SELECT [Username]
 	   ,SUBSTrING([Email], (CHARINDEX('@', [Email], 1) + 1), LEN([Email]) - CHARINDEX('@', [Email], 1)) AS [Email Providers]
 FROM  [Users]
 ORDER BY [Email Providers], [Username]
+
+--16.	 Get Users with IP Address Like Pattern
+--Find all users with their IP addresses, sorted by username alphabetically. Display only the rows which IP address matches the pattern: "***.1^.^.***". 
+--Legend: 
+--* - one symbol
+--^ - one or more symbols
+
+SELECT [Username]
+	   ,[IpAddress]
+FROM  [Users]
+WHERE [IpAddress] LIKE '___.1_%._%.___'
+ORDER BY [Username]
+
+--17.	 Show All Games with Duration and Part of the Day
+--Find all games with part of the day and duration. Sort them by game name alphabetically, then by duration (alphabetically, not by the timespan) and part of the day (all ascending). Part of the Day should be Morning (time is >= 0 and < 12), Afternoon (time is >= 12 and < 18), Evening (time is >= 18 and < 24). Duration should be Extra Short (smaller or equal to 3), Short (between 4 and 6 including), Long (greater than 6) and Extra Long (without duration). 
+
+   SELECT [Name] AS [Game]
+	      ,CASE
+			   WHEN DATEPART(HOUR, [Start]) >= 0 AND DATEPART(HOUR, [Start]) < 12 THEN 'Morning'
+			   WHEN DATEPART(HOUR, [Start]) >= 12 AND DATEPART(HOUR, [Start]) < 18 THEN 'Afternoon'
+			   ELSE 'Evening'
+	      END AS [Part of the Day]
+	      ,CASE
+			   WHEN [Duration] <= 3 THEN 'Extra Short'
+			   WHEN [Duration] BETWEEN 4 AND 6 THEN 'Short'
+			   WHEN [Duration] > 6 THEN 'Long'
+			   ELSE 'Extra Long'
+	      END AS [Duration]
+     FROM [Games]
+ ORDER BY [Game], [Duration], [Part of the Day]
+
+--18. Orders Table
+--You are given a table Orders(Id, ProductName, OrderDate) filled with data. Consider that the payment for that order must be accomplished within 3 days after the order date. Also the delivery date is up to 1 month. Write a query to show each product's name, order date, pay and deliver due dates. 
+
+SELECT [ProductName]
+	   ,[OrderDate]
+	   ,DATEADD(DAY,3,OrderDate) AS [Pay Due]
+	   ,DATEADD(MONTH,1,OrderDate) AS [Deliver Due]
+     FROM [Orders]
+
+--	 19.	 People Table
+--Create a table People(Id, Name, Birthdate). Write a query to find age in years, months, days and minutes for each person for the current time of executing the query.
+
+CREATE DATABASE [TEST]
+   CREATE TABLE [People] (
+			    [Id] INT PRIMARY KEY IDENTITY
+				,[Name] NVARCHAR(50) NOT NULL
+				,[Birthdate] DATETIME2 NOT NULL
+   )
+
+   INSERT INTO [People] ([Name], [Birthdate])
+   VAlUES ('Victor', '2000-12-07 00:00:00.000'),
+   ('Steven', '1992-09-10 00:00:00.000'),
+   ('Stephen', '1910-09-19 00:00:00.000'),
+   ('John', '2010-01-06 00:00:00.000')
+
+   SELECT [Name]
+	      ,DATEDIFF(YEAR, [Birthdate], GETDATE()) AS [Age in Years]
+		  ,DATEDIFF(MONTH, [Birthdate], GETDATE()) AS [Age in Months]
+		  ,DATEDIFF(DAY, [Birthdate], GETDATE()) AS [Age in Days]
+		  ,DATEDIFF(MINUTE, [Birthdate], GETDATE()) AS [Age in Minutes]
+  FROM [People]
