@@ -149,3 +149,63 @@ WHERE LEFT(Town, 1) = 'L'
    WHERE Email LIKE ('%.com%')
    GROUP BY CONCAT_WS(' ', FirstName, LastName), Email
 	ORDER BY FullName
+
+
+--10. Creators by Rating
+
+	  SELECT  c.LastName,
+			  CEILING(AVG(b.Rating)) AS AverageRating,
+			  p.[Name] AS PublisherName
+	    FROM Creators c
+   LEFT JOIN CreatorsBoardgames cb ON c.Id = cb.CreatorId
+   LEFT JOIN Boardgames b ON cb.BoardgameId = b.Id
+   LEFT JOIN Publishers p ON b.PublisherId = p.Id
+	   WHERE c.Id IN (SELECT CreatorId FROM CreatorsBoardgames) AND p.[Name] = 'Stonemaier Games'
+	   GROUP BY c.LastName, p.[Name]
+	   ORDER BY AVG(b.Rating) DESC
+
+
+GO
+--11. Creator with Boardgames
+
+CREATE OR ALTER FUNCTION udf_CreatorWithBoardgames(@name NVARCHAR(30))
+RETURNS INT
+AS
+BEGIN
+	DECLARE @totalBoardgamesCreator INT = 
+	(
+		SELECT
+			COUNT(cb.BoardgameId)
+		FROM Creators AS c
+		INNER JOIN CreatorsBoardgames as cb
+		ON c.Id = cb.CreatorId
+		WHERE c.FirstName = @name
+	)
+	RETURN @totalBoardgamesCreator
+END
+
+GO
+SELECT dbo.udf_CreatorWithBoardgames('Corey')
+
+GO
+
+--12. Search for Boardgame with Specific Category
+
+CREATE OR ALTER PROC usp_SearchByCategory(@category VARCHAR(50))
+AS
+
+	SELECT b.[Name],
+		   b.YearPublished,
+		   b.Rating,
+		   c.[Name] AS  CategoryName,
+		   p.[Name] AS PublisherName,
+		   CONCAT_WS(' ', pr.PlayersMin, 'people') AS MinPlayers,
+		   CONCAT(pr.PlayersMax,' ', 'people') AS  MaxPlayers
+     FROM Categories AS c
+LEFT JOIN Boardgames AS b ON c.Id = b.CategoryId
+LEFT JOIN Publishers AS p ON b.PublisherId = p.Id
+LEFT JOIN PlayersRanges AS pr ON b.PlayersRangeId = pr.Id
+    WHERE c.[Name] = @category
+ ORDER BY p.Name, b.YearPublished DESC
+
+EXEC usp_SearchByCategory 'Wargames'
