@@ -88,7 +88,6 @@ INSERT INTO Invoices (Number, Amount, IssueDate, DueDate, Currency, ClientId) VA
 (1950101013, 615.15, '2023-02-17', '2023-04-18', 'USD', 19)
 
 
-
 --- Problem 03: Update
 UPDATE Invoices
 SET DueDate = '2023-04-01'
@@ -99,12 +98,10 @@ SET AddressId = 3
 WHERE [Name] LIKE '%CO%'
 
 
-
 --- Problem 04: Delete
 DELETE FROM ProductsClients WHERE ClientId = 11
 DELETE FROM Invoices WHERE ClientId = 11
 DELETE FROM Clients WHERE SUBSTRING(NumberVat, 1, 2) = 'IT'
-
 
 
 --- Problem 05: Invoices by Amount and Date
