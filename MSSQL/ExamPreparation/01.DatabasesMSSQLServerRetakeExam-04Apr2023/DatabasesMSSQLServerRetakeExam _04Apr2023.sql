@@ -124,3 +124,75 @@ ORDER BY c.[Name]
 
 --08. First 7 Invoices
 
+SELECT TOP 7 Number,
+	   Amount,
+	   c.[Name]
+FROM Invoices i
+LEFT JOIN Clients c ON i.ClientId = c.Id
+WHERE (IssueDate < '2023-01-01' AND Currency = 'EUR') OR Amount > 500 AND NumberVAT LIKE 'DE%'
+ORDER BY Number, Amount DESC
+
+--09. Clients with VAT
+
+SELECT c.Name,
+	   MAX(p.Price) Price,
+	   c.NumberVAT
+FROM Clients c
+INNER JOIN ProductsClients pc ON c.Id = pc.ClientId
+INNER JOIN Products p ON pc.ProductId = p.Id
+WHERE RIGHT(c.Name, 2) <> 'KG'
+GROUP BY c.Name, c.NumberVAT
+ORDER BY MAX(p.Price) DESC
+
+--10. Clients by Price
+
+SELECT c.Name,
+       FLOOR(AVG(p.Price))
+FROM Clients c
+LEFT JOIN ProductsClients pc ON c.Id = pc.ClientId
+LEFT JOIN Products p ON pc.ProductId = p.Id
+LEFT JOIN Vendors v ON p.VendorId = v.Id
+WHERE c.Id IN (pc.ClientId) AND v.NumberVAT LIKE '%FR%' 
+GROUP BY c.Name
+ORDER BY  FLOOR(AVG(p.Price)), c.Name DESC
+
+GO
+
+--11. Product with Clients
+
+CREATE OR ALTER FUNCTION udf_ProductWithClients(@name NVARCHAR(30))
+RETURNS INT
+AS
+BEGIN
+
+      RETURN (SELECT COUNT(c.Id)
+FROM Clients c
+LEFT JOIN ProductsClients pc ON c.Id = pc.ClientId
+LEFT JOIN Addresses a ON c.AddressId = a.Id
+LEFT JOIN Countries cr ON a.CountryId = cr.Id
+LEFT JOIN Products p ON pc.ProductId = p.Id
+WHERE p.Name = @name)
+
+END
+
+SELECT dbo.udf_ProductWithClients('DAF FILTER HU12103X')
+
+GO
+
+--12. Search for Vendors from a Specific Country
+
+CREATE OR ALTER PROC usp_SearchByCountry(@country VARCHAR(10))
+AS
+
+SELECT v.[Name] Vendor,
+       v.NumberVAT AS VAT,
+	   CONCAT(a.StreetName, ' ', a.StreetNumber) AS [Street Info],
+	   CONCAT(a.City, ' ', a.PostCode) AS [City Info]
+FROM Vendors v
+LEFT JOIN Addresses a ON v.AddressId = a.Id
+LEFT JOIN Countries cr ON a.CountryId = cr.Id
+WHERE cr.Name = @country
+ORDER BY v.[Name], a.City
+
+
+EXEC usp_SearchByCountry 'France'
