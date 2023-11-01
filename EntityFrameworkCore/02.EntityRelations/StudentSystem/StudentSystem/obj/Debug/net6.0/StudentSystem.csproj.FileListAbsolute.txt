@@ -1,0 +1,14 @@
+C:\Users\OGMOS\Desktop\CSharpDBFundamentals\EntityFrameworkCore\02.EntityRelations\StudentSystem\StudentSystem\bin\Debug\net6.0\StudentSystem.exe
+C:\Users\OGMOS\Desktop\CSharpDBFundamentals\EntityFrameworkCore\02.EntityRelations\StudentSystem\StudentSystem\bin\Debug\net6.0\StudentSystem.deps.json
+C:\Users\OGMOS\Desktop\CSharpDBFundamentals\EntityFrameworkCore\02.EntityRelations\StudentSystem\StudentSystem\bin\Debug\net6.0\StudentSystem.runtimeconfig.json
+C:\Users\OGMOS\Desktop\CSharpDBFundamentals\EntityFrameworkCore\02.EntityRelations\StudentSystem\StudentSystem\bin\Debug\net6.0\StudentSystem.dll
+C:\Users\OGMOS\Desktop\CSharpDBFundamentals\EntityFrameworkCore\02.EntityRelations\StudentSystem\StudentSystem\bin\Debug\net6.0\StudentSystem.pdb
+C:\Users\OGMOS\Desktop\CSharpDBFundamentals\EntityFrameworkCore\02.EntityRelations\StudentSystem\StudentSystem\obj\Debug\net6.0\StudentSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\OGMOS\Desktop\CSharpDBFundamentals\EntityFrameworkCore\02.EntityRelations\StudentSystem\StudentSystem\obj\Debug\net6.0\StudentSystem.AssemblyInfoInputs.cache
+C:\Users\OGMOS\Desktop\CSharpDBFundamentals\EntityFrameworkCore\02.EntityRelations\StudentSystem\StudentSystem\obj\Debug\net6.0\StudentSystem.AssemblyInfo.cs
+C:\Users\OGMOS\Desktop\CSharpDBFundamentals\EntityFrameworkCore\02.EntityRelations\StudentSystem\StudentSystem\obj\Debug\net6.0\StudentSystem.csproj.CoreCompileInputs.cache
+C:\Users\OGMOS\Desktop\CSharpDBFundamentals\EntityFrameworkCore\02.EntityRelations\StudentSystem\StudentSystem\obj\Debug\net6.0\StudentSystem.dll
+C:\Users\OGMOS\Desktop\CSharpDBFundamentals\EntityFrameworkCore\02.EntityRelations\StudentSystem\StudentSystem\obj\Debug\net6.0\refint\StudentSystem.dll
+C:\Users\OGMOS\Desktop\CSharpDBFundamentals\EntityFrameworkCore\02.EntityRelations\StudentSystem\StudentSystem\obj\Debug\net6.0\StudentSystem.pdb
+C:\Users\OGMOS\Desktop\CSharpDBFundamentals\EntityFrameworkCore\02.EntityRelations\StudentSystem\StudentSystem\obj\Debug\net6.0\StudentSystem.genruntimeconfig.cache
+C:\Users\OGMOS\Desktop\CSharpDBFundamentals\EntityFrameworkCore\02.EntityRelations\StudentSystem\StudentSystem\obj\Debug\net6.0\ref\StudentSystem.dll
