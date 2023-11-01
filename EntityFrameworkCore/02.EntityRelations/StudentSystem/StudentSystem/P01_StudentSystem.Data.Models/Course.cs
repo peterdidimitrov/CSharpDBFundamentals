@@ -25,4 +25,5 @@ public class Course
     public virtual ICollection<Student>? Students { get; set; }
     public virtual ICollection<Resource>? Resources { get; set; }
     public virtual ICollection<Homework>? Homeworks { get; set; }
+    public virtual ICollection<StudentCourse>? StudentsCourses { get; set; }
 }

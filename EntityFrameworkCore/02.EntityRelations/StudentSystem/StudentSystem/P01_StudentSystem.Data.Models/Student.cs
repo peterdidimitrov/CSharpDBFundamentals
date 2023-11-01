@@ -16,11 +16,9 @@ public class Student
 
     [MaxLength(10)]
     public string? PhoneNumber { get; set; }
-
     public DateTime RegisteredOn { get; set; }
-
-    public DateTime Birthday { get; set; }
-
+    public DateTime? Birthday { get; set; }
     public ICollection<Course>? Courses { get; set; }
     public ICollection<Homework>? Homeworks { get; set; }
+    public virtual ICollection<StudentCourse>? StudentsCourses { get; set; }
 }

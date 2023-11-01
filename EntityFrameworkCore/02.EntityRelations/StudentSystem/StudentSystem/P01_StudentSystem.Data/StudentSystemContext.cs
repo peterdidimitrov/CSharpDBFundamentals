@@ -11,15 +11,36 @@ public class StudentSystemContext : DbContext
 
     }
 
-    private const string ConnectionString = "Server=.;Database=StudentSystem;User Id=...;Password=....;TrustServerCertificate=true";
+    private const string ConnectionString = "Server=.;Database=StudentSystem;Integrated Security=true;";
 
-    public DbSet<Student>? Students { get; set; }
-    public DbSet<Course>? Courses { get; set; }
-    public DbSet<Resource>? Resources { get; set; }
-    public DbSet<Homework>? Homeworks { get; set; }
+    public virtual DbSet<Student> Students { get; set; } = null!;
+    public virtual DbSet<Course> Courses { get; set; } = null!;
+    public virtual DbSet<Resource> Resources { get; set; } = null!;
+    public virtual DbSet<Homework> Homeworks { get; set; } = null!;
+    public virtual DbSet<StudentCourse> StudentsCourses { get; set; } = null!;
 
     //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     //{
     //    optionsBuilder.UseSqlServer(ConnectionString);
     //}
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<StudentCourse>(entity =>
+        {
+            entity.HasKey(pk => new
+            {
+                pk.StudentId,
+                pk.CourseId
+            });
+
+            entity.HasOne(sc => sc.Student)
+                .WithMany(s => s.StudentsCourses)
+                .HasForeignKey(sc => sc.StudentId);
+
+            entity.HasOne(sc => sc.Course)
+                .WithMany(c => c.StudentsCourses)
+                .HasForeignKey(sc => sc.CourseId);
+        });
+    }
 }

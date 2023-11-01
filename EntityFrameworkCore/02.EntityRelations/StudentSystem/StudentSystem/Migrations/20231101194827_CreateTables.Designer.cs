@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using P01_StudentSystem.Data;
 
@@ -11,9 +12,10 @@ using P01_StudentSystem.Data;
 namespace P01_StudentSystem.Migrations
 {
     [DbContext(typeof(StudentSystemContext))]
-    partial class StudentSystemContextModelSnapshot : ModelSnapshot
+    [Migration("20231101194827_CreateTables")]
+    partial class CreateTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -161,21 +163,6 @@ namespace P01_StudentSystem.Migrations
                     b.ToTable("Students");
                 });
 
-            modelBuilder.Entity("P01_StudentSystem.Data.Models.StudentCourse", b =>
-                {
-                    b.Property<int>("StudentId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CourseId")
-                        .HasColumnType("int");
-
-                    b.HasKey("StudentId", "CourseId");
-
-                    b.HasIndex("CourseId");
-
-                    b.ToTable("StudentsCourses");
-                });
-
             modelBuilder.Entity("CourseStudent", b =>
                 {
                     b.HasOne("P01_StudentSystem.Data.Models.Course", null)
@@ -219,39 +206,16 @@ namespace P01_StudentSystem.Migrations
                     b.Navigation("Course");
                 });
 
-            modelBuilder.Entity("P01_StudentSystem.Data.Models.StudentCourse", b =>
-                {
-                    b.HasOne("P01_StudentSystem.Data.Models.Course", "Course")
-                        .WithMany("StudentsCourses")
-                        .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("P01_StudentSystem.Data.Models.Student", "Student")
-                        .WithMany("StudentsCourses")
-                        .HasForeignKey("StudentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Course");
-
-                    b.Navigation("Student");
-                });
-
             modelBuilder.Entity("P01_StudentSystem.Data.Models.Course", b =>
                 {
                     b.Navigation("Homeworks");
 
                     b.Navigation("Resources");
-
-                    b.Navigation("StudentsCourses");
                 });
 
             modelBuilder.Entity("P01_StudentSystem.Data.Models.Student", b =>
                 {
                     b.Navigation("Homeworks");
-
-                    b.Navigation("StudentsCourses");
                 });
 #pragma warning restore 612, 618
         }
