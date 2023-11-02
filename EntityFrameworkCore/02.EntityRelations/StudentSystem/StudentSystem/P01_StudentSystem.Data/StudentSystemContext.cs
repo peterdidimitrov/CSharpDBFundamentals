@@ -6,12 +6,15 @@ using Microsoft.EntityFrameworkCore;
 public class StudentSystemContext : DbContext
 {
 
-    public StudentSystemContext(DbContextOptions dbContextOptions) : base(dbContextOptions)
-    {
+    //public StudentSystemContext(DbContextOptions dbContextOptions) : base(dbContextOptions)
+    //{
 
-    }
+    //}
 
-    private const string ConnectionString = "Server=.;Database=StudentSystem;Integrated Security=true;";
+    //private const string ConnectionString = "Server=.;Database=StudentSystem;Integrated Security=true;";
+
+    private const string ConnectionString = "Server=.;Database=StudentSystem;User Id=sa;Password=Pass12345;TrustServerCertificate=true";
+
 
     public virtual DbSet<Student> Students { get; set; } = null!;
     public virtual DbSet<Course> Courses { get; set; } = null!;
