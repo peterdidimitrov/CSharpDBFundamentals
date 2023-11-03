@@ -3,7 +3,6 @@
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
-
 public class Student
 {
     [Key]
@@ -16,6 +15,8 @@ public class Student
 
     [MaxLength(10)]
     public string? PhoneNumber { get; set; }
+
+    [Required]
     public DateTime RegisteredOn { get; set; }
     public DateTime? Birthday { get; set; }
     public ICollection<Course>? Courses { get; set; }

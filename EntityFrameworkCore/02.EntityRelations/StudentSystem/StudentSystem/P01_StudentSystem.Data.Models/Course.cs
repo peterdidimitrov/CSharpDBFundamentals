@@ -15,11 +15,11 @@ public class Course
 
     [Unicode]
     public string? Description { get; set; }
-
+    [Required]
     public DateTime StartDate { get; set; }
-
+    [Required]
     public DateTime EndDate { get; set; }
-
+    [Required]
     public decimal Price { get; set; }
 
     public virtual ICollection<Student>? Students { get; set; }
