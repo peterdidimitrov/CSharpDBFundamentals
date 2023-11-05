@@ -5,15 +5,16 @@ using Microsoft.EntityFrameworkCore;
 
 public class StudentSystemContext : DbContext
 {
+    public StudentSystemContext()
+    {
 
-    public StudentSystemContext(DbContextOptions dbContextOptions) : base(dbContextOptions)
+    }
+    public StudentSystemContext(DbContextOptions DbContextOptions) : base(DbContextOptions)
     {
 
     }
 
-    //private const string ConnectionString = "Server=.;Database=StudentSystem;Integrated Security=true;";
-
-    private const string ConnectionString = "Server=.;Database=StudentSystem;User Id=sa;Password=Pass12345;TrustServerCertificate=true";
+    private const string ConnectionString = "Server=.;Database=...;Integrated Security=true;";
 
 
     public virtual DbSet<Student> Students { get; set; } = null!;
@@ -22,10 +23,13 @@ public class StudentSystemContext : DbContext
     public virtual DbSet<Homework> Homeworks { get; set; } = null!;
     public virtual DbSet<StudentCourse> StudentsCourses { get; set; } = null!;
 
-    //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    //{
-    //    optionsBuilder.UseSqlServer(ConnectionString);
-    //}
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        if (!optionsBuilder.IsConfigured)
+        {
+            optionsBuilder.UseSqlServer(ConnectionString);
+        }
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -36,14 +40,6 @@ public class StudentSystemContext : DbContext
                 pk.StudentId,
                 pk.CourseId
             });
-
-            entity.HasOne(sc => sc.Student)
-                .WithMany(s => s.StudentsCourses)
-                .HasForeignKey(sc => sc.StudentId);
-
-            entity.HasOne(sc => sc.Course)
-                .WithMany(c => c.StudentsCourses)
-                .HasForeignKey(sc => sc.CourseId);
         });
     }
 }
