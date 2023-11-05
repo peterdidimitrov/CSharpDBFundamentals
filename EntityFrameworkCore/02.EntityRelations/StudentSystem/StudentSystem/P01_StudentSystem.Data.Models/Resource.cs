@@ -14,13 +14,21 @@ public class Resource
     [Unicode]
     public string Name { get; set; } = null!;
 
+<<<<<<< Updated upstream
     [Required]
     [Unicode(false)]
     public string? Url { get; set; }
+=======
+    public string Url { get; set; } = null!;
+>>>>>>> Stashed changes
 
     public ResourceType ResourceType { get; set; }
 
     public int CourseId { get; set; }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     [ForeignKey(nameof(CourseId))]
     public virtual Course Course { get; set; } = null!;
 }

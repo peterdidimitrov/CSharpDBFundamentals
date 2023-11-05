@@ -13,7 +13,10 @@ public class Homework
     public int HomeworkId { get; set; }
 
     [Required]
+<<<<<<< Updated upstream
     [Unicode(false)]
+=======
+>>>>>>> Stashed changes
     public string Content { get; set; } = null!;
 
     public ContentType ContentType { get; set; }
@@ -24,7 +27,10 @@ public class Homework
     public int StudentId { get; set; }
     [ForeignKey(nameof(StudentId))]
     public virtual Student Student { get; set; } = null!;
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 
     public int CourseId { get; set;}
     [ForeignKey(nameof(CourseId))]
