@@ -1,6 +1,7 @@
 ﻿namespace MusicHub;
 
 using System;
+using System.Globalization;
 using System.Text;
 using Data;
 using Initializer;
@@ -29,7 +30,7 @@ public class StartUp
             .Albums.Select(a => new
             {
                 a.Name,
-                ReleaseDate = a.ReleaseDate.ToString(@"MM\/dd\/yyyy"),
+                ReleaseDate = a.ReleaseDate.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture),
                 Producer = a.Producer.Name,
                 Songs = a.Songs.Select(s => new
                 {
@@ -90,7 +91,7 @@ public class StartUp
                 .OrderBy(p => p.PerformerName)
                 .ToList(),
                 AlbumProduserName = s.Album.Producer.Name,
-                Duration = s.Duration
+                Duration = s.Duration.ToString("c")
             })
             .OrderBy(s => s.Name)
             .ThenBy(s => s.SongWriter)
