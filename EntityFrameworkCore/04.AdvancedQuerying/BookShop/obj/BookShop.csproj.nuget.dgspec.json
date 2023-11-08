@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\OGMOS\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop\\BookShop.csproj": {}
+    "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop\\BookShop.csproj": {}
   },
   "projects": {
-    "C:\\Users\\OGMOS\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Data\\BookShop.Data.csproj": {
+    "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Data\\BookShop.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\OGMOS\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Data\\BookShop.Data.csproj",
+        "projectUniqueName": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Data\\BookShop.Data.csproj",
         "projectName": "BookShop.Data",
-        "projectPath": "C:\\Users\\OGMOS\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Data\\BookShop.Data.csproj",
-        "packagesPath": "C:\\Users\\OGMOS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\OGMOS\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Data\\obj\\",
+        "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Data\\BookShop.Data.csproj",
+        "packagesPath": "C:\\Users\\fuji\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\OGMOS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\fuji\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,15 +26,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\OGMOS\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Models\\BookShop.Models.csproj": {
-                "projectPath": "C:\\Users\\OGMOS\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Models\\BookShop.Models.csproj"
+              "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Models\\BookShop.Models.csproj": {
+                "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Models\\BookShop.Models.csproj"
               }
             }
           }
@@ -70,8 +69,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -80,24 +78,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\OGMOS\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Initializer\\BookShop.Initializer.csproj": {
+    "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Initializer\\BookShop.Initializer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\OGMOS\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Initializer\\BookShop.Initializer.csproj",
+        "projectUniqueName": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Initializer\\BookShop.Initializer.csproj",
         "projectName": "BookShop.Initializer",
-        "projectPath": "C:\\Users\\OGMOS\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Initializer\\BookShop.Initializer.csproj",
-        "packagesPath": "C:\\Users\\OGMOS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\OGMOS\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Initializer\\obj\\",
+        "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Initializer\\BookShop.Initializer.csproj",
+        "packagesPath": "C:\\Users\\fuji\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Initializer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\OGMOS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\fuji\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -106,18 +104,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\OGMOS\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Data\\BookShop.Data.csproj": {
-                "projectPath": "C:\\Users\\OGMOS\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Data\\BookShop.Data.csproj"
+              "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Data\\BookShop.Data.csproj": {
+                "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Data\\BookShop.Data.csproj"
               },
-              "C:\\Users\\OGMOS\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Models\\BookShop.Models.csproj": {
-                "projectPath": "C:\\Users\\OGMOS\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Models\\BookShop.Models.csproj"
+              "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Models\\BookShop.Models.csproj": {
+                "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Models\\BookShop.Models.csproj"
               }
             }
           }
@@ -137,8 +134,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -147,24 +143,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\OGMOS\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Models\\BookShop.Models.csproj": {
+    "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Models\\BookShop.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\OGMOS\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Models\\BookShop.Models.csproj",
+        "projectUniqueName": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Models\\BookShop.Models.csproj",
         "projectName": "BookShop.Models",
-        "projectPath": "C:\\Users\\OGMOS\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Models\\BookShop.Models.csproj",
-        "packagesPath": "C:\\Users\\OGMOS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\OGMOS\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Models\\obj\\",
+        "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Models\\BookShop.Models.csproj",
+        "packagesPath": "C:\\Users\\fuji\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\OGMOS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\fuji\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -173,7 +169,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -197,8 +192,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -207,24 +201,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\OGMOS\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop\\BookShop.csproj": {
+    "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop\\BookShop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\OGMOS\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop\\BookShop.csproj",
+        "projectUniqueName": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop\\BookShop.csproj",
         "projectName": "BookShop",
-        "projectPath": "C:\\Users\\OGMOS\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop\\BookShop.csproj",
-        "packagesPath": "C:\\Users\\OGMOS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\OGMOS\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop\\obj\\",
+        "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop\\BookShop.csproj",
+        "packagesPath": "C:\\Users\\fuji\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\OGMOS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\fuji\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -233,21 +227,20 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\OGMOS\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Data\\BookShop.Data.csproj": {
-                "projectPath": "C:\\Users\\OGMOS\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Data\\BookShop.Data.csproj"
+              "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Data\\BookShop.Data.csproj": {
+                "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Data\\BookShop.Data.csproj"
               },
-              "C:\\Users\\OGMOS\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Initializer\\BookShop.Initializer.csproj": {
-                "projectPath": "C:\\Users\\OGMOS\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Initializer\\BookShop.Initializer.csproj"
+              "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Initializer\\BookShop.Initializer.csproj": {
+                "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Initializer\\BookShop.Initializer.csproj"
               },
-              "C:\\Users\\OGMOS\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Models\\BookShop.Models.csproj": {
-                "projectPath": "C:\\Users\\OGMOS\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Models\\BookShop.Models.csproj"
+              "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Models\\BookShop.Models.csproj": {
+                "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\04.AdvancedQuerying\\BookShop.Models\\BookShop.Models.csproj"
               }
             }
           }
@@ -279,8 +272,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -289,7 +281,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

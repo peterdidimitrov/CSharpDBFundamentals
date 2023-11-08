@@ -5,6 +5,7 @@ using Data;
 using Initializer;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Globalization;
 using System.Text;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
@@ -18,7 +19,7 @@ public class StartUp
         string input = Console.ReadLine();
         //int input = int.Parse(Console.ReadLine());
 
-        Console.WriteLine(GetBooksByCategory(db, input));
+        Console.WriteLine(GetAuthorNamesEndingIn(db, input));
 
     }
     public static string GetBooksByAgeRestriction(BookShopContext context, string command)
@@ -89,7 +90,10 @@ public class StartUp
     public static string GetBooksByCategory(BookShopContext context, string input)
     {
 
-        string[] categories = input.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+        string[] categories = input
+            .Split(' ', StringSplitOptions.RemoveEmptyEntries)
+            .Select(c => c.ToLower())
+            .ToArray();
 
         string[] bookTitles = context.Books
             .Where(b => b.BookCategories
@@ -100,6 +104,45 @@ public class StartUp
             .ToArray();
 
         return string.Join(Environment.NewLine, bookTitles);
+    }
+
+    public static string GetBooksReleasedBefore(BookShopContext context, string date)
+    {
+        DateTime inputDate = DateTime.ParseExact(date, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+
+        var bookTitles = context.Books
+            .Where(b => b.ReleaseDate < inputDate)
+            .OrderByDescending(b => b.ReleaseDate)
+            .Select(b => new 
+            {
+                b.Title,
+                b.EditionType,
+                b.Price
+            })
+            .ToArray();
+
+        StringBuilder sb = new StringBuilder();
+
+        foreach (var bookTitle in bookTitles)
+        {
+            sb.AppendLine($"{bookTitle.Title} - {bookTitle.EditionType} - ${bookTitle.Price:f2}");
+        }
+
+        return sb.ToString().TrimEnd();
+    }
+
+    public static string GetAuthorNamesEndingIn(BookShopContext context, string input)
+    {
+        var authors = context.Authors
+            .Where(a => a.FirstName.EndsWith(input))
+            .Select(a => new
+            {
+                Name = $"{a.FirstName} {a.LastName}"
+            })
+            .OrderBy(a => a.Name)
+            .ToArray();
+
+        return string.Join(Environment.NewLine, authors.Select(a => a.Name));
     }
 }
 
