@@ -3,5 +3,5 @@
 internal class Configuration
 {
     internal static string ConnectionString
-        => "Server=.;Database=....;Trusted_Connection=True";
+        => "Server=.;Database=...;User Id=...;Password=...;TrustServerCertificate=true";
 }
