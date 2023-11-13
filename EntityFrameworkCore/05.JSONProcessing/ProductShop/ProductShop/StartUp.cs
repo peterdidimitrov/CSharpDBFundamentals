@@ -13,9 +13,9 @@ public class StartUp
     {
        ProductShopContext context = new ProductShopContext();
 
-        string inputJson = File.ReadAllText(@"../../../Datasets/categories.json");
+        string inputJson = File.ReadAllText(@"../../../Datasets/categories-products.json");
 
-        string result = ImportCategories(context, inputJson);
+        string result = ImportCategoryProducts(context, inputJson);
 
         Console.WriteLine(result);
     }
@@ -84,6 +84,27 @@ public class StartUp
         context.SaveChanges();
 
         return $"Successfully imported {validCategories.Count}";
+    }
+
+    public static string ImportCategoryProducts(ProductShopContext context, string inputJson)
+    {
+        IMapper mapper = CreateMapper();
+
+        ImportCategoryProductDto[] categoryProductDtos = JsonConvert.DeserializeObject<ImportCategoryProductDto[]>(inputJson);
+
+        ICollection<CategoryProduct> categoryProducts = new HashSet<CategoryProduct>();
+
+        foreach (ImportCategoryProductDto categoryProductDto in categoryProductDtos)
+        {
+            CategoryProduct categoryProduct = mapper.Map<CategoryProduct>(categoryProductDto);
+
+            categoryProducts.Add(categoryProduct);
+        }
+
+        context.CategoriesProducts.AddRange(categoryProducts);
+        context.SaveChanges();
+
+        return $"Successfully imported {categoryProducts.Count}";
     }
 
     private static IMapper CreateMapper()

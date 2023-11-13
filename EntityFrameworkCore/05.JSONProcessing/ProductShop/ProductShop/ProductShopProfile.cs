@@ -14,5 +14,7 @@ public class ProductShopProfile : Profile
         this.CreateMap<ImportProductDto, Product>();
 
         this.CreateMap<ImportCategoryDto, Category>();
+
+        this.CreateMap<ImportCategoryProductDto, CategoryProduct>();
     }
 }

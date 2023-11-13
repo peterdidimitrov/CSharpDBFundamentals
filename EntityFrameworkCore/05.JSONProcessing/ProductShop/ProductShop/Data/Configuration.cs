@@ -3,5 +3,5 @@
 public static class Configuration
 {
     public const string ConnectionString =
-        @"Server=.;Database=SoftUni;Integrated Security=true;";
+        @"Server=.;Database=ProductShop;Integrated Security=true;";
 }
