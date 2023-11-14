@@ -10,5 +10,5 @@ public class Customer
 
     public bool IsYoungDriver { get; set; }
 
-    public virtual ICollection<Sale> Sales { get; set; } = new HashSet<Sale>(); 
+    public virtual ICollection<Sale> Sales { get; set; } = new List<Sale>(); 
 }
