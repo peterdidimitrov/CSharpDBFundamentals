@@ -3,5 +3,5 @@
 public static class Configuration
 {
     public const string ConnectionString =
-        @"Server=.;Database=ProductShop;Integrated Security=true;";
+        @"Server=.;Database=...;User Id=...;Password=...;TrustServerCertificate=true";
 }

@@ -6,16 +6,20 @@ using Data;
 using DTOs.Import;
 using ProductShop.Models;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using ProductShop.DTOs.Export;
+using AutoMapper.QueryableExtensions;
+using Newtonsoft.Json.Serialization;
 
 public class StartUp
 {
     public static void Main()
     {
-       ProductShopContext context = new ProductShopContext();
+        ProductShopContext context = new ProductShopContext();
 
-        string inputJson = File.ReadAllText(@"../../../Datasets/categories-products.json");
+        //string inputJson = File.ReadAllText(@"../../../Datasets/categories-products.json");
 
-        string result = ImportCategoryProducts(context, inputJson);
+        string result = GetUsersWithProducts(context);
 
         Console.WriteLine(result);
     }
@@ -107,11 +111,142 @@ public class StartUp
         return $"Successfully imported {categoryProducts.Count}";
     }
 
+    public static string GetProductsInRange(ProductShopContext context)
+    {
+        //var products = context.Products
+        //    .Where(p => p.Price >= 500 && p.Price <= 1000)
+        //    .OrderBy(p => p.Price)
+        //    .Select(p => new
+        //    {
+        //        name = p.Name,
+        //        price = p.Price,
+        //        seller = p.Seller.FirstName + " " + p.Seller.LastName
+        //    })
+        //    .AsNoTracking()
+        //    .ToArray();
+
+        //DTO + AutoMapper
+        IMapper mapper = CreateMapper();
+
+        ExportProductInRangeDto[] productDtos = context.Products
+            .Where(p => p.Price >= 500 && p.Price <= 1000)
+            .OrderBy(p => p.Price)
+            .AsNoTracking()
+            .ProjectTo<ExportProductInRangeDto>(mapper.ConfigurationProvider)
+            .ToArray();
+
+        return JsonConvert.SerializeObject(productDtos, Formatting.Indented);
+    }
+
+    public static string GetSoldProducts(ProductShopContext context)
+    {
+        IContractResolver contractResolver = ConfigureCamelCaseNaming();
+
+        var usersWhitSoldProducts = context.Users
+            .Where(u => u.ProductsSold.Any(p => p.Buyer != null))
+            .OrderBy(u => u.LastName)
+            .ThenBy(u => u.FirstName)
+            .Select(u => new
+            {
+                u.FirstName,
+                u.LastName,
+                SoldProducts = u.ProductsSold
+                    .Where(p => p.Buyer != null)
+                    .Select(p => new
+                    {
+                        p.Name,
+                        p.Price,
+                        BuyerFirstName = p.Buyer.FirstName,
+                        BuyerLastName = p.Buyer.LastName
+                    })
+                    .ToArray()
+            })
+            .AsNoTracking()
+            .ToArray();
+
+        return JsonConvert.SerializeObject(usersWhitSoldProducts, Formatting.Indented, new JsonSerializerSettings
+        {
+            ContractResolver = contractResolver
+        });
+    }
+
+    public static string GetCategoriesByProductsCount(ProductShopContext context)
+    {
+        IContractResolver contractResolver = ConfigureCamelCaseNaming();
+
+        var categories = context.Categories
+            .OrderByDescending(c => c.CategoriesProducts.Count())
+            .Select(c => new
+            {
+                Category = c.Name,
+                ProductsCount = c.CategoriesProducts.Count(),
+                AveragePrice = (c.CategoriesProducts.Any() ? c.CategoriesProducts.Average(cp => cp.Product.Price) : 0).ToString("f2"),
+                TotalRevenue = (c.CategoriesProducts.Any() ? c.CategoriesProducts.Sum(cp => cp.Product.Price) : 0).ToString("f2")
+            })
+            .AsNoTracking()
+            .ToArray();
+
+        return JsonConvert.SerializeObject(categories, Formatting.Indented, new JsonSerializerSettings
+        {
+            ContractResolver = contractResolver
+        });
+    }
+
+    public static string GetUsersWithProducts(ProductShopContext context)
+    {
+        IContractResolver contractResolver = ConfigureCamelCaseNaming();
+
+        var users = context.Users
+            .Where(u => u.ProductsSold.Any(p => p.Buyer != null))
+            .Select(u => new
+            {
+                u.FirstName,
+                u.LastName,
+                u.Age,
+                SoldProducts = new
+                {
+                    Count = u.ProductsSold.Count(p => p.Buyer != null),
+                    Products = u.ProductsSold
+                    .Where(p => p.Buyer != null)
+                    .Select(p => new
+                    {
+                        p.Name,
+                        p.Price
+                    })
+                    .ToArray()
+                }
+            })
+            .OrderByDescending(u => u.SoldProducts.Count)
+            .AsNoTracking()
+            .ToArray();
+
+        var userWrapperDto = new
+        {
+            UsersCount = users.Length,
+            Users = users
+        };
+
+
+        return JsonConvert.SerializeObject(userWrapperDto, Formatting.Indented, new JsonSerializerSettings()
+        {
+            ContractResolver = contractResolver,
+            NullValueHandling = NullValueHandling.Ignore
+        });
+    }
+
     private static IMapper CreateMapper()
     {
         return new Mapper(new MapperConfiguration(cfg =>
         {
             cfg.AddProfile<ProductShopProfile>();
         }));
+    }
+
+    private static IContractResolver ConfigureCamelCaseNaming()
+    {
+        return new DefaultContractResolver()
+        {
+            NamingStrategy = new CamelCaseNamingStrategy(false, true)
+        };
     }
 }
