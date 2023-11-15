@@ -14,5 +14,5 @@ public class Part
 
     public virtual Supplier Supplier { get; set; } = null!;
 
-    public virtual ICollection<PartCar> PartsCars { get; set; } = new List<PartCar>();
+    public virtual ICollection<PartCar> PartsCars { get; set; } = new HashSet<PartCar>();
 }
