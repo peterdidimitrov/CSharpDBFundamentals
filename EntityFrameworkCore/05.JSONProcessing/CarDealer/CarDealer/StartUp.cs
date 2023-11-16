@@ -18,7 +18,7 @@ public class StartUp
 
         //string inputJson = File.ReadAllText(@"../../../Datasets/sales.json");
 
-        string result = GetTotalSalesByCustomer(context);
+        string result = GetSalesWithAppliedDiscount(context);
 
         Console.WriteLine(result);
     }
@@ -213,13 +213,16 @@ public class StartUp
     public static string GetTotalSalesByCustomer(CarDealerContext context)
     {
         IContractResolver contractResolver = ConfigureCamelCaseNaming();
+
         var customers = context.Customers
-            .Where(c => c.Sales.Any())
-            .Select(c => new
+            .Where(c => c.Sales.Count > 0)
+            .Select(s => new
             {
-                FullName = c.Name,
-                BoughtCars = c.Sales.Count(),
-                SpentMoney = c.Sales.Sum(s => s.Car.PartsCars.Sum(pc => pc.Part.Price))
+                FullName = s.Name,
+                BoughtCars = s.Sales.Count(),
+                SpentMoney = s.Sales
+                        .SelectMany(sale => sale.Car.PartsCars)
+                        .Sum(pc => pc.Part.Price)
             })
             .OrderByDescending(c => c.SpentMoney)
             .ThenByDescending(c => c.BoughtCars)
@@ -232,6 +235,29 @@ public class StartUp
             NullValueHandling = NullValueHandling.Ignore
         });
     }
+    public static string GetSalesWithAppliedDiscount(CarDealerContext context)
+    {
+
+        var salesInfo = context.Sales
+            .Take(10)
+            .Select(s => new
+            {
+                car = new
+                {
+                    Make = s.Car.Make,
+                    Model = s.Car.Model,
+                    TraveledDistance = s.Car.TraveledDistance
+                },
+                customerName = s.Customer.Name,
+                discount = s.Discount.ToString("f2"),
+                price = s.Car.PartsCars.Select(c => c.Part.Price).Sum().ToString("f2"),
+                priceWithDiscount = ((s.Car.PartsCars.Select(c => c.Part.Price).Sum()) - ((s.Car.PartsCars.Select(c => c.Part.Price).Sum()))*((s.Discount)/100)).ToString("f2")
+            })
+            .AsNoTracking()
+            .ToArray();
+
+        return JsonConvert.SerializeObject(salesInfo, Formatting.Indented);
+    }
     private static IMapper CreateMapper()
     {
         return new Mapper(new MapperConfiguration(cfg =>
@@ -239,7 +265,6 @@ public class StartUp
             cfg.AddProfile<CarDealerProfile>();
         }));
     }
-
     private static IContractResolver ConfigureCamelCaseNaming()
     {
         return new DefaultContractResolver()
