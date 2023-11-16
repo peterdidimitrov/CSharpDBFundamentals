@@ -214,16 +214,17 @@ public class StartUp
     {
         IContractResolver contractResolver = ConfigureCamelCaseNaming();
         var customers = context.Customers
+            .AsNoTracking()
             .Where(c => c.Sales.Any())
             .Select(c => new
             {
                 FullName = c.Name,
                 BoughtCars = c.Sales.Count(),
-                SpentMoney = c.Sales.Sum(s => s.Car.PartsCars.Sum(pc => pc.Part.Price))
+                SpentMoney = c.Sales.Select(s => s.Car.PartsCars.Sum(pc => pc.Part.Price))
             })
-            .OrderByDescending(c => c.SpentMoney)
-            .ThenByDescending(c => c.BoughtCars)
-            .AsNoTracking()
+            .ToArray()
+            //.OrderByDescending(c => c.SpentMoney)
+            .OrderByDescending(c => c.BoughtCars)
             .ToArray();
 
         return JsonConvert.SerializeObject(customers, Formatting.Indented, new JsonSerializerSettings()
