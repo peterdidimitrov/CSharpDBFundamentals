@@ -2,6 +2,6 @@
 {
     public static class Configuration
     {
-        public const string ConnectionString = @"Server=.;Database=CarDealer;User Id=sa;Password=Pass12345;TrustServerCertificate=true";
+        public const string ConnectionString = @"Server=.;Database=...;User Id=...;Password=...;TrustServerCertificate=true";
     }
 }
