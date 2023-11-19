@@ -11,5 +11,8 @@ public class CarDealerProfile : Profile
         this.CreateMap<ImportSupplierDto, Supplier>();
         this.CreateMap<ImportPartDto, Part>()
             .ForMember(d => d.SupplierId, opt => opt.MapFrom(s => s.SupplierId.Value));
+        this.CreateMap<ImportCarDto, Car>()
+            .ForSourceMember(s => s.Parts, opt => opt.DoNotValidate());
+        this.CreateMap<ImportCustomerDto, Customer>();
     }
 }
