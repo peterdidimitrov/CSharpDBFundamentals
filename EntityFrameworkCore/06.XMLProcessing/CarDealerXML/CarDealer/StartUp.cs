@@ -1,22 +1,24 @@
-﻿using CarDealer.Data;
-
-namespace CarDealer;
+﻿namespace CarDealer;
 
 using AutoMapper;
-using CarDealer.DTOs.Import;
+
+using CarDealer.Data;
 using CarDealer.Models;
 using CarDealer.Utilities;
-using System.IO;
+using CarDealer.DTOs.Import;
+using CarDealer.DTOs.Export;
+using Microsoft.EntityFrameworkCore;
+using AutoMapper.QueryableExtensions;
+using System.Collections.Immutable;
 
 public class StartUp
 {
     public static void Main()
     {
         using CarDealerContext context = new CarDealerContext();
-        string inputXml =
-            File.ReadAllText("../../../Datasets/sales.xml");
+        //string inputXml = File.ReadAllText("../../../Datasets/sales.xml");
 
-        string result = ImportSales(context, inputXml);
+        string result = GetCarsFromMakeBmw(context);
 
         Console.WriteLine(result);
     }
@@ -181,6 +183,38 @@ public class StartUp
         context.SaveChanges();
 
         return $"Successfully imported {validSales.Count}";
+    }
+
+    public static string GetCarsWithDistance(CarDealerContext context)
+    {
+        IMapper mapper = CreateMapper();
+        XmlHelper xmlHelper = new XmlHelper();
+
+        ExportCarDto[] cars = context.Cars
+            .Where(c => c.TraveledDistance > 2000000)
+            .OrderBy(c => c.Make)
+            .ThenBy(c => c.Model)
+            .Take(10)
+            .ProjectTo<ExportCarDto>(mapper.ConfigurationProvider)
+            .ToArray();
+
+        return xmlHelper.Serialize<ExportCarDto[]>(cars, "cars");
+    }
+
+    public static string GetCarsFromMakeBmw(CarDealerContext context)
+    {
+        IMapper mapper = CreateMapper();
+
+        XmlHelper xmlHelper = new XmlHelper();
+
+        ExportCarWithIdDto[] cars = context.Cars
+            .Where(c => c.Make.ToUpper() == "BMW")
+            .OrderBy(c => c.Model)
+            .ThenByDescending(c => c.TraveledDistance)
+            .ProjectTo<ExportCarWithIdDto>(mapper.ConfigurationProvider)
+            .ToArray();
+
+        return xmlHelper.Serialize(cars, "cars");
     }
 
     private static IMapper CreateMapper()

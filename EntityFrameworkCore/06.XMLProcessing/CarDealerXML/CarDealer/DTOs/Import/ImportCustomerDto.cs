@@ -9,7 +9,7 @@ public class ImportCustomerDto
     public string Name { get; set; } = null!;
 
     [XmlElement("birthDate")]
-    public DateTime BirthDate { get; set; }
+    public string BirthDate { get; set; } = null!;
 
     [XmlElement("isYoungDriver")]
     public bool IsYoungDriver { get; set; }
