@@ -19,8 +19,8 @@ public class ProductShopProfile : Profile
 
         this.CreateMap<Product, ExportUserProductDto>();
 
-        this.CreateMap<Product, ExportProductInRange>()
-            .ForMember(d => d.BuyerName, opt => opt.MapFrom(s => s.Buyer.FirstName + " " + s.Buyer.LastName));
+       // this.CreateMap<Product, ExportProductInRange>()
+            //.ForMember(d => d.BuyerFullName, opt => opt.MapFrom(s => s.Buyer.FirstName + " " + s.Buyer.LastName));
 
         //category
         this.CreateMap<ImportCategoryDto, Category>();

@@ -12,5 +12,5 @@ public class ExportProductInRange
     public decimal Price { get; set; }
 
     [XmlElement("buyer")]
-    public string BuyerName { get; set; }
+    public string? BuyerFullName { get; set; }
 }

@@ -16,7 +16,7 @@ public class StartUp
         //string inputXml =
             File.ReadAllText("../../../Datasets/categories-products.xml");
 
-        string result = GetCategoriesByProductsCount(context);
+        string result = GetProductsInRange(context);
 
         Console.WriteLine(result);
     }
@@ -138,9 +138,15 @@ public class StartUp
 
         ExportProductInRange[] products = context.Products
             .Where(p => p.Price >= 500 && p.Price <= 1000)
+            .Select(p => new ExportProductInRange
+            {
+                Name = p.Name,
+                Price = p.Price,
+                BuyerFullName = $"{p.Buyer.FirstName} {p.Buyer.LastName}"
+            })
             .OrderBy(p => p.Price)
             .Take(10)
-            .ProjectTo<ExportProductInRange>(mapper.ConfigurationProvider)
+            //.ProjectTo<ExportProductInRange>(mapper.ConfigurationProvider)
             .ToArray();
 
         return xmlHelper.Serialize<ExportProductInRange[]>(products, "Products");
