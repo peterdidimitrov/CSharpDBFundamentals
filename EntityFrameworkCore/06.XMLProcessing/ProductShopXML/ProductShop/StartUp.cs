@@ -1,8 +1,9 @@
 ﻿namespace ProductShop;
 
 using AutoMapper;
-
+using AutoMapper.QueryableExtensions;
 using ProductShop.Data;
+using ProductShop.DTOs.Export;
 using ProductShop.DTOs.Import;
 using ProductShop.Models;
 using ProductShop.Utilities;
@@ -12,10 +13,10 @@ public class StartUp
     public static void Main()
     {
         using ProductShopContext context = new ProductShopContext();
-        string inputXml =
-            File.ReadAllText("../../../Datasets/categories.xml");
+        //string inputXml =
+            File.ReadAllText("../../../Datasets/categories-products.xml");
 
-        string result = ImportCategories(context, inputXml);
+        string result = GetCategoriesByProductsCount(context);
 
         Console.WriteLine(result);
     }
@@ -98,6 +99,97 @@ public class StartUp
         context.SaveChanges();
 
         return $"Successfully imported {validCategories.Count}";
+    }
+
+    public static string ImportCategoryProducts(ProductShopContext context, string inputXml)
+    {
+        IMapper mapper = CreateMapper();
+
+        XmlHelper xmlHelper = new XmlHelper();
+
+        ImportCategoryProductDto[] categoryProductDtos = xmlHelper.Deserialize<ImportCategoryProductDto[]>(inputXml, "CategoryProducts");
+
+        ICollection<CategoryProduct> validCategoryProducts = new HashSet<CategoryProduct>();
+
+        foreach (ImportCategoryProductDto categoryProductDto in categoryProductDtos)
+        {
+            if (string.IsNullOrEmpty(categoryProductDto.CategoryId.ToString()) ||
+                string.IsNullOrEmpty(categoryProductDto.ProductId.ToString()))
+            {
+                continue;
+            }
+
+            CategoryProduct categoryProduct = mapper.Map<CategoryProduct>(categoryProductDto);
+
+            validCategoryProducts.Add(categoryProduct);
+        }
+
+        context.CategoryProducts.AddRange(validCategoryProducts);
+        context.SaveChanges();
+
+        return $"Successfully imported {validCategoryProducts.Count}";
+    }
+
+    public static string GetProductsInRange(ProductShopContext context)
+    {
+        IMapper mapper = CreateMapper();
+
+        XmlHelper xmlHelper = new XmlHelper();
+
+        ExportProductInRange[] products = context.Products
+            .Where(p => p.Price >= 500 && p.Price <= 1000)
+            .OrderBy(p => p.Price)
+            .Take(10)
+            .ProjectTo<ExportProductInRange>(mapper.ConfigurationProvider)
+            .ToArray();
+
+        return xmlHelper.Serialize<ExportProductInRange[]>(products, "Products");
+    }
+
+    public static string GetSoldProducts(ProductShopContext context)
+    {
+        XmlHelper xmlHelper = new XmlHelper();
+
+        ExportUserWithAtLeastOneSoldItem[] users = context.Users
+            .Where(u => u.ProductsSold.Any())
+            .Select(u => new ExportUserWithAtLeastOneSoldItem
+            {
+                FirstName = u.FirstName,
+                LastName = u.LastName,
+                Products = u.ProductsSold.Select(sp => new ExportUserProductDto
+                {
+                    Name = sp.Name,
+                    Price = sp.Price
+                })
+                .ToArray()
+            })
+            .OrderBy(u => u.LastName)
+            .ThenBy(u => u.FirstName)
+            .Take(5)
+            .ToArray();
+
+        return xmlHelper.Serialize<ExportUserWithAtLeastOneSoldItem[]>(users, "Users");
+    }
+
+    public static string GetCategoriesByProductsCount(ProductShopContext context)
+    {
+        IMapper mapper = CreateMapper();
+        XmlHelper xmlHelper = new XmlHelper();
+
+        ExportCategoriesDto[] categoriesDtos = context.Categories
+            .Select(c => new ExportCategoriesDto
+            {
+                Name = c.Name,
+                Count = c.CategoryProducts.Count(),
+                AveragePrice = c.CategoryProducts.Average(cp => cp.Product.Price),
+                TotalRevenue = c.CategoryProducts.Sum(cp => cp.Product.Price)
+
+            })
+            .OrderByDescending(c => c.Count)
+            .ThenBy(c => c.TotalRevenue)
+            .ToArray();
+
+        return xmlHelper.Serialize<ExportCategoriesDto[]>(categoriesDtos, "Categories");
     }
 
     private static IMapper CreateMapper()
