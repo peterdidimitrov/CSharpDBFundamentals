@@ -18,7 +18,7 @@ public class StartUp
 
         //string inputJson = File.ReadAllText(@"../../../Datasets/sales.json");
 
-        string result = GetSalesWithAppliedDiscount(context);
+        string result = GetTotalSalesByCustomer(context);
 
         Console.WriteLine(result);
     }
@@ -244,9 +244,9 @@ public class StartUp
             {
                 car = new
                 {
-                    Make = s.Car.Make,
-                    Model = s.Car.Model,
-                    TraveledDistance = s.Car.TraveledDistance
+                    s.Car.Make,
+                    s.Car.Model,
+                    s.Car.TraveledDistance
                 },
                 customerName = s.Customer.Name,
                 discount = s.Discount.ToString("f2"),
