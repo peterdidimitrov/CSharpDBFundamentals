@@ -18,7 +18,7 @@ public class StartUp
         using CarDealerContext context = new CarDealerContext();
         //string inputXml = File.ReadAllText("../../../Datasets/sales.xml");
 
-        string result = GetSalesWithAppliedDiscount(context);
+        string result = GetCarsFromMakeBmw(context);
 
         Console.WriteLine(result);
     }
@@ -284,12 +284,12 @@ public class StartUp
                          Make = s.Car.Make,
                          Model = s.Car.Model,
                          TraveledDistance = s.Car.TraveledDistance
-                     },
-                     Discount = s.Discount,
+                     }, 
                      CustomerName = s.Customer.Name,
-                     Price = s.Car.PartsCars.Sum(p => p.Part.Price).ToString("f2"),
-                     PriceWithDiscount = Math.Round((s.Car.PartsCars.Sum(y => y.Part.Price) -
-                (s.Car.PartsCars.Sum(y => y.Part.Price) * s.Discount * 0.01m)), 2).ToString("f2")
+                     Discount = s.Discount.ToString("f0"),
+                     Price = (double)s.Car.PartsCars.Sum(cp => cp.Part.Price),
+                     PriceWithDiscount = (double)(s.Car.PartsCars.Sum(y => y.Part.Price) -
+                (s.Car.PartsCars.Sum(y => y.Part.Price) * (s.Discount / 100)))
                  })
                  .ToArray();
 

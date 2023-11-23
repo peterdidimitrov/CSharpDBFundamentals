@@ -6,10 +6,10 @@ using System.Xml.Serialization;
 public class ExportCarSaleDto
 {
     [XmlAttribute("make")]
-    public string Make { get; set; } = null!;
+    public string Make { get; set; }
 
     [XmlAttribute("model")]
-    public string Model { get; set; } = null!;
+    public string Model { get; set; }
 
     [XmlAttribute("traveled-distance")]
     public long TraveledDistance { get; set; }

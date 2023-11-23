@@ -13,8 +13,7 @@ public class StartUp
     public static void Main()
     {
         using ProductShopContext context = new ProductShopContext();
-        //string inputXml =
-            File.ReadAllText("../../../Datasets/categories-products.xml");
+        //string inputXml = File.ReadAllText("../../../Datasets/categories-products.xml");
 
         string result = GetProductsInRange(context);
 

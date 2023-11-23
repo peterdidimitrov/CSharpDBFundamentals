@@ -6,17 +6,17 @@ using System.Xml.Serialization;
 public class ExportSaleWithAppliedDiscountDto
 {
     [XmlElement("car")]
-    public ExportCarSaleDto Car { get; set; } = null!;
+    public ExportCarSaleDto Car { get; set; }
 
     [XmlElement("discount")]
-    public decimal Discount { get; set; }
+    public string Discount { get; set; }
 
     [XmlElement("customer-name")]
     public string CustomerName { get; set; } = null!;
 
     [XmlElement("price")]
-    public string Price { get; set; } = null!;
+    public double Price { get; set; }
 
     [XmlElement("price-with-discount")]
-    public string PriceWithDiscount { get; set; } = null!;
+    public double PriceWithDiscount { get; set; }
 }

@@ -122,3 +122,4 @@ C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\06.XMLProcessing\
 C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\06.XMLProcessing\CarDealerXML\CarDealer\obj\Debug\net6.0\CarDealer.pdb
 C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\06.XMLProcessing\CarDealerXML\CarDealer\obj\Debug\net6.0\CarDealer.genruntimeconfig.cache
 C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\06.XMLProcessing\CarDealerXML\CarDealer\obj\Debug\net6.0\ref\CarDealer.dll
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\06.XMLProcessing\CarDealerXML\CarDealer\obj\Debug\net6.0\CarDealer.sourcelink.json
