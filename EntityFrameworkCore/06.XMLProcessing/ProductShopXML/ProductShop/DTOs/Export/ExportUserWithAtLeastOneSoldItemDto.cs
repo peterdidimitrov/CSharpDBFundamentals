@@ -3,7 +3,7 @@
 using System.Xml.Serialization;
 
 [XmlType("User")]
-public class ExportUserWithAtLeastOneSoldItem
+public class ExportUserWithAtLeastOneSoldItemDto
 {
     [XmlElement("firstName")]
     public string FirstName { get; set; } = null!;

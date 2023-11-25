@@ -12,7 +12,7 @@ public class ProductShopProfile : Profile
         //User
         this.CreateMap<ImportUserDto, User>();
 
-        this.CreateMap<User, ExportUserWithAtLeastOneSoldItem>();
+        this.CreateMap<User, ExportUserWithAtLeastOneSoldItemDto>();
 
         //Product
         this.CreateMap<ImportProductDto, Product>();

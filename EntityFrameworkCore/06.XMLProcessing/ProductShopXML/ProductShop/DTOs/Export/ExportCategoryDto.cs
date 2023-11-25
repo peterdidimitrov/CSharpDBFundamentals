@@ -3,7 +3,7 @@
 using System.Xml.Serialization;
 
 [XmlType("Category")]
-public class ExportCategoriesDto
+public class ExportCategoryDto
 {
     [XmlElement("name")]
     public string Name { get; set; } = null!;
