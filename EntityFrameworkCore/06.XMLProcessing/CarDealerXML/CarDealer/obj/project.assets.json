@@ -7154,23 +7154,39 @@
     ]
   },
   "packageFolders": {
+<<<<<<< Updated upstream
     "C:\\Users\\fuji\\.nuget\\packages\\": {},
+=======
+    "C:\\Users\\Peter\\.nuget\\packages\\": {},
+>>>>>>> Stashed changes
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< Updated upstream
       "projectUniqueName": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\06.XMLProcessing\\CarDealerXML\\CarDealer\\CarDealer.csproj",
       "projectName": "CarDealer",
       "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\06.XMLProcessing\\CarDealerXML\\CarDealer\\CarDealer.csproj",
       "packagesPath": "C:\\Users\\fuji\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\06.XMLProcessing\\CarDealerXML\\CarDealer\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\06.XMLProcessing\\CarDealerXML\\CarDealer\\CarDealer.csproj",
+      "projectName": "CarDealer",
+      "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\06.XMLProcessing\\CarDealerXML\\CarDealer\\CarDealer.csproj",
+      "packagesPath": "C:\\Users\\Peter\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\06.XMLProcessing\\CarDealerXML\\CarDealer\\obj\\",
+>>>>>>> Stashed changes
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
+<<<<<<< Updated upstream
         "C:\\Users\\fuji\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\Peter\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> Stashed changes
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
