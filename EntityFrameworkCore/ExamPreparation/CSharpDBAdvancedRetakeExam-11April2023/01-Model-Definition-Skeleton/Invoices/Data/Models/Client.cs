@@ -25,6 +25,3 @@ public class Client
     public virtual ICollection<Address> Addresses { get; set; }
     public virtual ICollection<ProductClient> ProductsClients { get; set; }
 }
-
-//•	Name – text with length [10…25] (required)
-//•	NumberVat – text with length [10…15] (required)
