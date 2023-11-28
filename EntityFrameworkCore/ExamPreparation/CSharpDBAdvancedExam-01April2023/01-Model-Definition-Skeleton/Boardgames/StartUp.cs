@@ -1,96 +1,95 @@
-﻿namespace Boardgames
+﻿namespace Boardgames;
+
+using Microsoft.EntityFrameworkCore;
+using Boardgames.Data;
+
+public class StartUp
 {
-    using Microsoft.EntityFrameworkCore;
-    using Boardgames.Data;
-
-    public class StartUp
+    public static void Main()
     {
-        public static void Main()
+        var context = new BoardgamesContext();
+
+        ResetDatabase(context, shouldDropDatabase: true);
+
+        var projectDir = GetProjectDirectory();
+
+        ImportEntities(context, projectDir + @"Datasets/", projectDir + @"ImportResults/");
+
+        ExportEntities(context, projectDir + @"ExportResults/");
+
+        using (var transaction = context.Database.BeginTransaction())
         {
-            var context = new BoardgamesContext();
+            transaction.Rollback();
+        }
+    }
 
-            ResetDatabase(context, shouldDropDatabase: true);
+    private static void ImportEntities(BoardgamesContext context, string baseDir, string exportDir)
+    {
+        var creators =
+            DataProcessor.Deserializer.ImportCreators(context,
+                File.ReadAllText(baseDir + "creators.xml"));
 
-            var projectDir = GetProjectDirectory();
+        PrintAndExportEntityToFile(creators, exportDir + "Actual Result - ImportCreators.txt");
 
-            ImportEntities(context, projectDir + @"Datasets/", projectDir + @"ImportResults/");
+        var sellers =
+         DataProcessor.Deserializer.ImportSellers(context,
+             File.ReadAllText(baseDir + "sellers.json"));
 
-            //ExportEntities(context, projectDir + @"ExportResults/");
+        PrintAndExportEntityToFile(sellers, exportDir + "Actual Result - ImportSellers.txt");
+    }
 
-            using (var transaction = context.Database.BeginTransaction())
-            {
-                transaction.Rollback();
-            }
+    private static void ExportEntities(BoardgamesContext context, string exportDir)
+    {
+        var exportCreatorsWithTheirBoardgames = DataProcessor.Serializer.ExportCreatorsWithTheirBoardgames(context);
+        Console.WriteLine(exportCreatorsWithTheirBoardgames);
+        File.WriteAllText(exportDir + "Actual Result - ExportCreatorsWithTheirBoardgames.xml", exportCreatorsWithTheirBoardgames);
+
+        var year = 2021;
+        double rating = 9.50;
+        var exportSellersWithMostBoardgames = DataProcessor.Serializer.ExportSellersWithMostBoardgames(context, year, rating);
+        Console.WriteLine(exportSellersWithMostBoardgames);
+        File.WriteAllText(exportDir + "Actual Result - ExportSellersWithMostBoardgames.json", exportSellersWithMostBoardgames);
+    }
+
+    private static void ResetDatabase(BoardgamesContext context, bool shouldDropDatabase = false)
+    {
+        if (shouldDropDatabase)
+        {
+            context.Database.EnsureDeleted();
         }
 
-        private static void ImportEntities(BoardgamesContext context, string baseDir, string exportDir)
+        if (context.Database.EnsureCreated())
         {
-            var creators =
-                DataProcessor.Deserializer.ImportCreators(context,
-                    File.ReadAllText(baseDir + "creators.xml"));
-
-            PrintAndExportEntityToFile(creators, exportDir + "Actual Result - ImportCreators.txt");
-
-            var sellers =
-             DataProcessor.Deserializer.ImportSellers(context,
-                 File.ReadAllText(baseDir + "sellers.json"));
-
-            PrintAndExportEntityToFile(sellers, exportDir + "Actual Result - ImportSellers.txt");
+            return;
         }
 
-        private static void ExportEntities(BoardgamesContext context, string exportDir)
-        {
-            var exportCreatorsWithTheirBoardgames = DataProcessor.Serializer.ExportCreatorsWithTheirBoardgames(context);
-            Console.WriteLine(exportCreatorsWithTheirBoardgames);
-            File.WriteAllText(exportDir + "Actual Result - ExportCreatorsWithTheirBoardgames.xml", exportCreatorsWithTheirBoardgames);
+        var disableIntegrityChecksQuery = "EXEC sp_MSforeachtable @command1='ALTER TABLE ? NOCHECK CONSTRAINT ALL'";
+        context.Database.ExecuteSqlRaw(disableIntegrityChecksQuery);
 
-            var year = 2021;
-            double rating = 9.50;
-            var exportSellersWithMostBoardgames = DataProcessor.Serializer.ExportSellersWithMostBoardgames(context, year, rating);
-            Console.WriteLine(exportSellersWithMostBoardgames);
-            File.WriteAllText(exportDir + "Actual Result - ExportSellersWithMostBoardgames.json", exportSellersWithMostBoardgames);
-        }
+        var deleteRowsQuery = "EXEC sp_MSforeachtable @command1='SET QUOTED_IDENTIFIER ON;DELETE FROM ?'";
+        context.Database.ExecuteSqlRaw(deleteRowsQuery);
 
-        private static void ResetDatabase(BoardgamesContext context, bool shouldDropDatabase = false)
-        {
-            if (shouldDropDatabase)
-            {
-                context.Database.EnsureDeleted();
-            }
+        var enableIntegrityChecksQuery =
+            "EXEC sp_MSforeachtable @command1='ALTER TABLE ? WITH CHECK CHECK CONSTRAINT ALL'";
+        context.Database.ExecuteSqlRaw(enableIntegrityChecksQuery);
 
-            if (context.Database.EnsureCreated())
-            {
-                return;
-            }
+        var reseedQuery =
+            "EXEC sp_MSforeachtable @command1='IF OBJECT_ID(''?'') IN (SELECT OBJECT_ID FROM SYS.IDENTITY_COLUMNS) DBCC CHECKIDENT(''?'', RESEED, 0)'";
+        context.Database.ExecuteSqlRaw(reseedQuery);
+    }
 
-            var disableIntegrityChecksQuery = "EXEC sp_MSforeachtable @command1='ALTER TABLE ? NOCHECK CONSTRAINT ALL'";
-            context.Database.ExecuteSqlRaw(disableIntegrityChecksQuery);
+    private static void PrintAndExportEntityToFile(string entityOutput, string outputPath)
+    {
+        Console.WriteLine(entityOutput);
+        File.WriteAllText(outputPath, entityOutput.TrimEnd());
+    }
 
-            var deleteRowsQuery = "EXEC sp_MSforeachtable @command1='SET QUOTED_IDENTIFIER ON;DELETE FROM ?'";
-            context.Database.ExecuteSqlRaw(deleteRowsQuery);
+    private static string GetProjectDirectory()
+    {
+        var currentDirectory = Directory.GetCurrentDirectory();
+        var directoryName = Path.GetFileName(currentDirectory);
+        var relativePath = directoryName.StartsWith("net6.0") ? @"../../../" : string.Empty;
 
-            var enableIntegrityChecksQuery =
-                "EXEC sp_MSforeachtable @command1='ALTER TABLE ? WITH CHECK CHECK CONSTRAINT ALL'";
-            context.Database.ExecuteSqlRaw(enableIntegrityChecksQuery);
-
-            var reseedQuery =
-                "EXEC sp_MSforeachtable @command1='IF OBJECT_ID(''?'') IN (SELECT OBJECT_ID FROM SYS.IDENTITY_COLUMNS) DBCC CHECKIDENT(''?'', RESEED, 0)'";
-            context.Database.ExecuteSqlRaw(reseedQuery);
-        }
-
-        private static void PrintAndExportEntityToFile(string entityOutput, string outputPath)
-        {
-            Console.WriteLine(entityOutput);
-            File.WriteAllText(outputPath, entityOutput.TrimEnd());
-        }
-
-        private static string GetProjectDirectory()
-        {
-            var currentDirectory = Directory.GetCurrentDirectory();
-            var directoryName = Path.GetFileName(currentDirectory);
-            var relativePath = directoryName.StartsWith("net6.0") ? @"../../../" : string.Empty;
-
-            return relativePath;
-        }
+        return relativePath;
     }
 }

@@ -1,13 +1,12 @@
-﻿namespace Boardgames
-{
-    using AutoMapper;
+﻿namespace Boardgames;
 
-    public class BoardgamesProfile : Profile
+using AutoMapper;
+
+public class BoardgamesProfile : Profile
+{
+    // DO NOT CHANGE OR RENAME THIS CLASS!
+    public BoardgamesProfile()
     {
-        // DO NOT CHANGE OR RENAME THIS CLASS!
-        public BoardgamesProfile()
-        {
-            
-        }
+        
     }
 }

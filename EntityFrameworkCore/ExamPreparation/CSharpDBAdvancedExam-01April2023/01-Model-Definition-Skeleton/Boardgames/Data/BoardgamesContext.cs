@@ -1,35 +1,34 @@
-﻿namespace Boardgames.Data
+﻿namespace Boardgames.Data;
+
+using Boardgames.Data.Models;
+using Microsoft.EntityFrameworkCore;
+
+public class BoardgamesContext : DbContext
 {
-    using Boardgames.Data.Models;
-    using Microsoft.EntityFrameworkCore;
-    
-    public class BoardgamesContext : DbContext
+    public BoardgamesContext()
+    { 
+    }
+
+    public BoardgamesContext(DbContextOptions options)
+        : base(options) 
     {
-        public BoardgamesContext()
-        { 
-        }
+    }
+    public virtual DbSet<Boardgame> Boardgames { get; set; } = null!;
+    public virtual DbSet<Creator> Creators { get; set; } = null!;
+    public virtual DbSet<Seller> Sellers { get; set; } = null!;
+    public virtual DbSet<BoardgameSeller> BoardgamesSellers { get; set; } = null!;
 
-        public BoardgamesContext(DbContextOptions options)
-            : base(options) 
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        if (!optionsBuilder.IsConfigured)
         {
+            optionsBuilder
+                .UseSqlServer(Configuration.ConnectionString);
         }
-        public virtual DbSet<Boardgame> Boardgames { get; set; } = null!;
-        public virtual DbSet<Creator> Creators { get; set; } = null!;
-        public virtual DbSet<Seller> Sellers { get; set; } = null!;
-        public virtual DbSet<BoardgameSeller> BoardgamesSellers { get; set; } = null!;
+    }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder
-                    .UseSqlServer(Configuration.ConnectionString);
-            }
-        }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<BoardgameSeller>(e => e.HasKey(bs => new { bs.SellerId, bs.BoardgameId}));
-        }
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<BoardgameSeller>(e => e.HasKey(bs => new { bs.SellerId, bs.BoardgameId}));
     }
 }
