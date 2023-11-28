@@ -7152,23 +7152,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\fuji\\.nuget\\packages\\": {},
+    "C:\\Users\\Peter\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\ExamPreparation\\CSharpDBAdvancedExam-01April2023\\01-Model-Definition-Skeleton\\Boardgames\\Boardgames.csproj",
+      "projectUniqueName": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\ExamPreparation\\CSharpDBAdvancedExam-01April2023\\01-Model-Definition-Skeleton\\Boardgames\\Boardgames.csproj",
       "projectName": "Boardgames",
-      "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\ExamPreparation\\CSharpDBAdvancedExam-01April2023\\01-Model-Definition-Skeleton\\Boardgames\\Boardgames.csproj",
-      "packagesPath": "C:\\Users\\fuji\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\ExamPreparation\\CSharpDBAdvancedExam-01April2023\\01-Model-Definition-Skeleton\\Boardgames\\obj\\",
+      "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\ExamPreparation\\CSharpDBAdvancedExam-01April2023\\01-Model-Definition-Skeleton\\Boardgames\\Boardgames.csproj",
+      "packagesPath": "C:\\Users\\Peter\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\ExamPreparation\\CSharpDBAdvancedExam-01April2023\\01-Model-Definition-Skeleton\\Boardgames\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\fuji\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Peter\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -7177,6 +7177,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

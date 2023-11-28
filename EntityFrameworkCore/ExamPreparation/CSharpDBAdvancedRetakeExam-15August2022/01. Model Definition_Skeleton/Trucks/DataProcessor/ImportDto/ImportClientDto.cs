@@ -1,7 +1,7 @@
-﻿using Newtonsoft.Json;
-using System.ComponentModel.DataAnnotations;
+﻿namespace Trucks.DataProcessor.ImportDto;
 
-namespace Trucks.DataProcessor.ImportDto;
+using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
 
 public class ImportClientDto
 {
@@ -23,5 +23,5 @@ public class ImportClientDto
 
 
     [JsonProperty("Trucks")]
-    public int[] TruckIds { get; set; }
+    public int[] TruckIds { get; set; } = null!;
 }

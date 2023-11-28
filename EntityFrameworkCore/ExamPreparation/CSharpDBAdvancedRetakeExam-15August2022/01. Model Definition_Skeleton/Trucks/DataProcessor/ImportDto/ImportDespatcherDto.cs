@@ -18,5 +18,5 @@ public class ImportDespatcherDto
     public string? Position { get; set; }
 
     [XmlArray("Trucks")]
-    public ImportTruckDto[] Trucks { get; set; }
+    public ImportTruckDto[] Trucks { get; set; } = null!;
 }

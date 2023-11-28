@@ -1,6 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿namespace Trucks.Data.Models;
 
-namespace Trucks.Data.Models;
+using System.ComponentModel.DataAnnotations;
 
 public class Client
 {
