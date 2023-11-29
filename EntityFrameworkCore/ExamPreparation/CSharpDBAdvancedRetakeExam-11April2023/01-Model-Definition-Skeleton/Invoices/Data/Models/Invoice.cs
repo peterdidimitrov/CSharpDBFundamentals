@@ -30,6 +30,3 @@ public class Invoice
 
     public virtual Client Client { get; set; } = null!;
 }
-
-
-//•	Number – integer in range[1, 000, 000, 000…1, 500, 000, 000] (required)

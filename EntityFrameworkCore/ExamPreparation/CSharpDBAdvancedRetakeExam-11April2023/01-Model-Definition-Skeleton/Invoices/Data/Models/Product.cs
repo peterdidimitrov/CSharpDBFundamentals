@@ -25,6 +25,3 @@ public class Product
 
     public virtual ICollection<ProductClient> ProductsClients { get; set; }
 }
-
-//•	Name – text with length[9…30] (required)
-//•	Price – decimal in range[5.00…1000.00] (required)

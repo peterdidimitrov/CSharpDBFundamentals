@@ -2,6 +2,6 @@
 {
     public static class Configuration
     {
-        public static string ConnectionString = @"Server=.;Database=Invoices;Integrated Security=True;Encrypt=False";
+        public static string ConnectionString = @"Server=.;Database=...;User Id=...;Password=...;TrustServerCertificate=true";
     }
 }

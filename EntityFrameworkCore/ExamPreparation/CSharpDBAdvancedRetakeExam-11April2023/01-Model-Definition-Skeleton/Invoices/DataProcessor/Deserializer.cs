@@ -1,11 +1,15 @@
 ﻿namespace Invoices.DataProcessor
 {
+    using System;
     using System.ComponentModel.DataAnnotations;
+    using System.Globalization;
     using System.Text;
     using Boardgames.Utilities;
     using Invoices.Data;
     using Invoices.Data.Models;
+    using Invoices.Data.Models.Enums;
     using Invoices.DataProcessor.ImportDto;
+    using Newtonsoft.Json;
 
     public class Deserializer
     {
@@ -80,12 +84,118 @@
 
         public static string ImportInvoices(InvoicesContext context, string jsonString)
         {
-            throw new NotImplementedException();
+            StringBuilder stringBuilder = new StringBuilder();
+
+            ImportInvoiceDto[] invoiceDtos = JsonConvert.DeserializeObject<ImportInvoiceDto[]>(jsonString);
+
+            ICollection<Invoice> validInvoices = new HashSet<Invoice>();
+
+            ICollection<int> existingClientIds = context.Clients
+            .Select(c => c.Id)
+            .ToArray();
+
+            foreach (ImportInvoiceDto invoiceDto in invoiceDtos)
+            {
+                if (!IsValid(invoiceDto))
+                {
+                    stringBuilder.AppendLine(ErrorMessage);
+                    continue;
+                }
+
+                if (invoiceDto.DueDate < invoiceDto.IssueDate)
+                {
+                    stringBuilder.AppendLine(ErrorMessage);
+                    continue;
+                }
+
+                if (!existingClientIds.Contains(invoiceDto.ClientId))
+                {
+                    stringBuilder.AppendLine(ErrorMessage);
+                    continue;
+                }
+
+                if (invoiceDto.DueDate == DateTime.ParseExact("01/01/0001", "dd/MM/yyyy", CultureInfo.InvariantCulture) || invoiceDto.IssueDate == DateTime.ParseExact("01/01/0001", "dd/MM/yyyy", CultureInfo.InvariantCulture))
+                {
+                    stringBuilder.AppendLine(ErrorMessage);
+                    continue;
+                }
+
+                Invoice invoice = new Invoice()
+                {
+                    Number = invoiceDto.Number,
+                    IssueDate = invoiceDto.DueDate,
+                    DueDate = invoiceDto.DueDate,
+                    Amount = invoiceDto.Amount,
+                    CurrencyType = invoiceDto.CurrencyType,
+                    ClientId = invoiceDto.ClientId,
+                };
+
+                validInvoices.Add(invoice);
+                stringBuilder.AppendLine(string.Format(SuccessfullyImportedInvoices, invoiceDto.Number));
+            }
+            context.Invoices.AddRange(validInvoices);
+            context.SaveChanges();
+
+            return stringBuilder.ToString().TrimEnd();
         }
 
         public static string ImportProducts(InvoicesContext context, string jsonString)
         {
-            throw new NotImplementedException();
+            StringBuilder stringBuilder = new StringBuilder();
+
+            ImportProductDto[] productDtos = JsonConvert.DeserializeObject<ImportProductDto[]>(jsonString);
+
+            ICollection<Product> validProducts = new HashSet<Product>();
+
+            ICollection<int> existingClientIds = context.Clients
+            .Select(c => c.Id)
+            .ToArray();
+
+            foreach (ImportProductDto productDto in productDtos)
+            {
+                if (!IsValid(productDto))
+                {
+                    stringBuilder.AppendLine(ErrorMessage);
+                    continue;
+                }
+
+                if (!Enum.IsDefined(typeof(CategoryType), productDto.CategoryType))
+                {
+                    stringBuilder.AppendLine(ErrorMessage);
+                    continue;
+                }
+
+                Product product = new Product()
+                {
+                    Name = productDto.Name,
+                    Price = productDto.Price,
+                    CategoryType = productDto.CategoryType
+                };
+
+                foreach (int clientId in productDto.ClientIds.Distinct())
+                {
+                    if (!existingClientIds.Contains(clientId))
+                    {
+                        stringBuilder.AppendLine(ErrorMessage);
+                        continue;
+                    }
+
+                    ProductClient productClient = new ProductClient()
+                    {
+                        Product = product,
+                        ClientId = clientId
+                    };
+                    product.ProductsClients.Add(productClient);
+                }
+
+                validProducts.Add(product);
+                stringBuilder.AppendLine(string.Format(SuccessfullyImportedProducts, product.Name, product.ProductsClients.Count));
+            }
+
+            context.Products.AddRange(validProducts);
+            context.SaveChanges();
+
+            return stringBuilder.ToString().TrimEnd();
         }
 
         public static bool IsValid(object dto)
