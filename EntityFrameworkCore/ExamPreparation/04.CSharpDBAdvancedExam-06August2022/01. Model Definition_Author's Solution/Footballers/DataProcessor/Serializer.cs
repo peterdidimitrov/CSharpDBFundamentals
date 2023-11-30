@@ -57,8 +57,7 @@
                 {
                     t.Name,
                     Footballers = t.TeamsFootballers
-                        .Where(tf => tf.Footballer.ContractStartDate >= date)
-                        .ToArray()
+                        .Where(f => f.Footballer.ContractStartDate >= date)
                         .OrderByDescending(tf => tf.Footballer.ContractEndDate)
                         .ThenBy(tf => tf.Footballer.Name)
                         .Select(tf => new
@@ -71,6 +70,7 @@
                         })
                         .ToArray()
                 })
+                .Where(t => t.Footbolars.Any(f => f.Footballer.ContractStartDate >= date))
                 .OrderByDescending(t => t.Footballers.Length)
                 .ThenBy(t => t.Name)
                 .Take(5)
