@@ -16,7 +16,14 @@
         { 
         }
 
-         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public virtual DbSet<Country> Countries { get; set; } = null!;
+        public virtual DbSet<CountryGun> CountriesGuns { get; set; } = null!;
+        public virtual DbSet<Shell> Shells { get; set; } = null!;
+        public virtual DbSet<Gun> Guns { get; set; } = null!;
+        public virtual DbSet<Manufacturer> Manufacturers { get; set; } = null!;
+
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
@@ -27,6 +34,7 @@
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<CountryGun>(e => e.HasKey(cg => new { cg.CountryId, cg.GunId }));
         }
     }
 }
