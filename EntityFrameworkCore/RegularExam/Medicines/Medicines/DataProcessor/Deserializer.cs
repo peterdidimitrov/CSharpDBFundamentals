@@ -1,181 +1,146 @@
-﻿namespace Medicines.DataProcessor
+﻿namespace Medicines.DataProcessor;
+
+using Medicines.Data;
+using Medicines.Data.Models;
+using Medicines.Data.Models.Enums;
+using Medicines.DataProcessor.ImportDtos;
+using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
+using System.Globalization;
+using System.Text;
+using Trucks.Utilities;
+
+public class Deserializer
 {
-    using Medicines.Data;
-    using Medicines.Data.Models;
-    using Medicines.Data.Models.Enums;
-    using Medicines.DataProcessor.ImportDtos;
-    using Newtonsoft.Json;
-    using System.ComponentModel.DataAnnotations;
-    using System.Globalization;
-    using System.Text;
-    using Trucks.Utilities;
+    private const string ErrorMessage = "Invalid Data!";
+    private const string SuccessfullyImportedPharmacy = "Successfully imported pharmacy - {0} with {1} medicines.";
+    private const string SuccessfullyImportedPatient = "Successfully imported patient - {0} with {1} medicines.";
 
-    public class Deserializer
+    public static string ImportPatients(MedicinesContext context, string jsonString)
     {
-        private const string ErrorMessage = "Invalid Data!";
-        private const string SuccessfullyImportedPharmacy = "Successfully imported pharmacy - {0} with {1} medicines.";
-        private const string SuccessfullyImportedPatient = "Successfully imported patient - {0} with {1} medicines.";
+        StringBuilder stringBuilder = new StringBuilder();
 
-        public static string ImportPatients(MedicinesContext context, string jsonString)
+        ImportPatientDto[] patientDtos = JsonConvert.DeserializeObject<ImportPatientDto[]>(jsonString);
+
+        ICollection<Patient> validPatients = new HashSet<Patient>();
+
+
+        foreach (ImportPatientDto patientDto in patientDtos)
         {
-            StringBuilder stringBuilder = new StringBuilder();
-
-            ImportPatientDto[] patientDtos = JsonConvert.DeserializeObject<ImportPatientDto[]>(jsonString);
-
-            ICollection<Patient> validPatients = new HashSet<Patient>();
-
-            ICollection<int> existingMedicineIds = context.Medicines
-                .Select(m => m.Id)
-                .ToArray();
-
-            foreach (ImportPatientDto patientDto in patientDtos)
+            if (!IsValid(patientDto))
             {
-                if (!IsValid(patientDto))
-                {
-                    stringBuilder.AppendLine(ErrorMessage);
-                    continue;
-                }
-
-                Patient patient = new Patient()
-                {
-                    FullName = patientDto.FullName,
-                    AgeGroup = (AgeGroup)patientDto.AgeGroup,
-                    Gender = (Gender)patientDto.Gender
-                };
-
-                foreach (int medicineId in patientDto.Medicines.Distinct())
-                {
-                    if (!existingMedicineIds.Contains(medicineId))
-                    {
-                        stringBuilder.AppendLine(ErrorMessage);
-                        continue;
-                    }
-
-                    PatientMedicine patientMedicine = new PatientMedicine()
-                    {
-                        Patient = patient,
-                        MedicineId = medicineId
-                    };
-                    patient.PatientsMedicines.Add(patientMedicine);
-                }
-                validPatients.Add(patient);
-                stringBuilder.AppendLine(string.Format(SuccessfullyImportedPatient, patient.FullName, patient.PatientsMedicines.Count));
+                stringBuilder.AppendLine(ErrorMessage);
+                continue;
             }
 
-            context.Patients.AddRange(validPatients);
-            context.SaveChanges();
-
-            return stringBuilder.ToString().Trim();
-        }
-
-        public static string ImportPharmacies(MedicinesContext context, string xmlString)
-        {
-            StringBuilder stringBuilder = new StringBuilder();
-            XmlHelper xmlHelper = new XmlHelper();
-
-            ImportPharmacyDto[] pharmacyDtos = xmlHelper.Deserialize<ImportPharmacyDto[]>(xmlString, "Pharmacies");
-
-            ICollection<Pharmacy> validPharmacies = new HashSet<Pharmacy>();
-
-            foreach (ImportPharmacyDto pharmacyDto in pharmacyDtos)
+            Patient patient = new Patient()
             {
+                FullName = patientDto.FullName,
+                AgeGroup = (AgeGroup)patientDto.AgeGroup,
+                Gender = (Gender)patientDto.Gender
+            };
 
-                if (!IsValid(pharmacyDto))
+            List<PatientMedicine> patientsMedicines = new List<PatientMedicine>();
+
+            foreach (int medicineId in patientDto.Medicines)
+            {
+                if (patientsMedicines.Select(pm => pm.MedicineId).Contains(medicineId))
                 {
                     stringBuilder.AppendLine(ErrorMessage);
                     continue;
                 }
 
-                bool isBool;
-                bool isBoolValid = bool.TryParse(pharmacyDto.IsNonStop, out isBool);
-
-                if (!isBoolValid)
+                PatientMedicine patientMedicine = new PatientMedicine()
                 {
-                    stringBuilder.AppendLine(ErrorMessage);
-                    continue;
-                }
-
-                ICollection<Medicine> validMedicines = new HashSet<Medicine>();
-
-                foreach (ImportMedicineDto medicineDto in pharmacyDto.Medicines)
-                {
-                    if (!IsValid(medicineDto) || medicineDto.Producer == null)
-                    {
-                        stringBuilder.AppendLine(ErrorMessage);
-                        continue;
-                    }
-                    if (validMedicines.Any(m => m.Name == medicineDto.Name || m.Producer == medicineDto.Producer))
-                    {
-                        stringBuilder.AppendLine(ErrorMessage);
-                        continue;
-                    }
-
-
-                    DateTime medicineProductionDate;
-                    bool isMedicineProductionDateValid = DateTime.TryParseExact(medicineDto.ProductionDate,
-                        "yyyy-MM-dd", CultureInfo.InvariantCulture,
-                        DateTimeStyles.None,
-                        out medicineProductionDate);
-                    if (!isMedicineProductionDateValid)
-                    {
-                        stringBuilder.AppendLine(ErrorMessage);
-                        continue;
-                    }
-
-                    DateTime medicineExpiryDate;
-                    bool isMedicineExpiryDateValid = DateTime.TryParseExact(medicineDto.ExpiryDate,
-                        "yyyy-MM-dd", CultureInfo.InvariantCulture,
-                        DateTimeStyles.None,
-                        out medicineExpiryDate);
-
-                    if (!isMedicineExpiryDateValid)
-                    {
-                        stringBuilder.AppendLine(ErrorMessage);
-                        continue;
-                    }
-
-                    if (medicineProductionDate >= medicineExpiryDate)
-                    {
-                        stringBuilder.AppendLine(ErrorMessage);
-                        continue;
-                    }
-
-                    Medicine medicine = new Medicine()
-                    {
-                        Name = medicineDto.Name,
-                        Category = (Category)medicineDto.Category,
-                        Price = medicineDto.Price,
-                        ProductionDate = medicineProductionDate,
-                        ExpiryDate = medicineExpiryDate,
-                        Producer = medicineDto.Producer
-                    };
-
-                    validMedicines.Add(medicine);
-                }
-
-                Pharmacy pharmacy = new Pharmacy()
-                {
-                    Name = pharmacyDto.Name,
-                    IsNonStop = bool.Parse(pharmacyDto.IsNonStop),
-                    PhoneNumber = pharmacyDto.PhoneNumber,
-                    Medicines = validMedicines
+                    Patient = patient,
+                    MedicineId = medicineId
                 };
-                validPharmacies.Add(pharmacy);
-                stringBuilder.AppendLine(string.Format(SuccessfullyImportedPharmacy, pharmacy.Name, pharmacy.Medicines.Count));
+
+                patientsMedicines.Add(patientMedicine);
+                patient.PatientsMedicines.Add(patientMedicine);
             }
 
-            context.Pharmacies.AddRange(validPharmacies);
-            context.SaveChanges();
-
-            return stringBuilder.ToString().TrimEnd();
+            validPatients.Add(patient);
+            stringBuilder.AppendLine(string.Format(SuccessfullyImportedPatient, patient.FullName, patient.PatientsMedicines.Count));
         }
 
-        private static bool IsValid(object dto)
+        context.Patients.AddRange(validPatients);
+        context.SaveChanges();
+
+        return stringBuilder.ToString().Trim();
+    }
+
+    public static string ImportPharmacies(MedicinesContext context, string xmlString)
+    {
+        StringBuilder stringBuilder = new StringBuilder();
+        XmlHelper xmlHelper = new XmlHelper();
+
+        ImportPharmacyDto[] pharmacyDtos = xmlHelper.Deserialize<ImportPharmacyDto[]>(xmlString, "Pharmacies");
+
+        ICollection<Pharmacy> validPharmacies = new HashSet<Pharmacy>();
+
+        foreach (ImportPharmacyDto pharmacyDto in pharmacyDtos)
         {
-            var validationContext = new ValidationContext(dto);
-            var validationResult = new List<ValidationResult>();
 
-            return Validator.TryValidateObject(dto, validationContext, validationResult, true);
+            if (!IsValid(pharmacyDto) || !bool.TryParse(pharmacyDto.IsNonStop, out bool temp))
+            {
+                stringBuilder.AppendLine(ErrorMessage);
+                continue;
+            }
+
+
+            ICollection<Medicine> validMedicines = new HashSet<Medicine>();
+
+            foreach (ImportMedicineDto medicineDto in pharmacyDto.Medicines)
+            {
+
+                bool nameAneProducerExistCurrent = validMedicines.Select(md => new { md.Name, md.Producer }).Any(md => md.Name == medicineDto.Name && md.Producer == medicineDto.Producer);
+
+
+                if (!IsValid(medicineDto)
+                    || DateTime.ParseExact(medicineDto.ProductionDate, "yyyy-MM-dd", CultureInfo.InvariantCulture) >= DateTime.ParseExact(medicineDto.ExpiryDate, "yyyy-MM-dd", CultureInfo.InvariantCulture)
+                    || nameAneProducerExistCurrent)
+                {
+                    stringBuilder.AppendLine(ErrorMessage);
+                    continue;
+                }
+
+                Medicine medicine = new Medicine()
+                {
+                    Name = medicineDto.Name,
+                    Price = (decimal)medicineDto.Price,
+                    ProductionDate = DateTime.ParseExact(medicineDto.ProductionDate, "yyyy-MM-dd", CultureInfo.InvariantCulture),
+                    ExpiryDate = DateTime.ParseExact(medicineDto.ExpiryDate, "yyyy-MM-dd", CultureInfo.InvariantCulture),
+                    Producer = medicineDto.Producer,
+                    Category = (Category)medicineDto.Category
+                };
+
+                validMedicines.Add(medicine);
+            }
+
+            Pharmacy pharmacy = new Pharmacy()
+            {
+                Name = pharmacyDto.Name,
+                IsNonStop = bool.Parse(pharmacyDto.IsNonStop),
+                PhoneNumber = pharmacyDto.PhoneNumber,
+                Medicines = validMedicines
+            };
+
+            validPharmacies.Add(pharmacy);
+            stringBuilder.AppendLine(string.Format(SuccessfullyImportedPharmacy, pharmacy.Name, pharmacy.Medicines.Count));
         }
+
+        context.Pharmacies.AddRange(validPharmacies);
+        context.SaveChanges();
+
+        return stringBuilder.ToString().TrimEnd();
+    }
+
+    private static bool IsValid(object dto)
+    {
+        var validationContext = new ValidationContext(dto);
+        var validationResult = new List<ValidationResult>();
+
+        return Validator.TryValidateObject(dto, validationContext, validationResult, true);
     }
 }
