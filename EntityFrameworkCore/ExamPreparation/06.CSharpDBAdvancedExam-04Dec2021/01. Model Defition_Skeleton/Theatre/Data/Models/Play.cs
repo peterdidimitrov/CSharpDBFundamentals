@@ -23,11 +23,11 @@ public class Play
     public Genre Genre { get; set; }
 
     [Required]
-    [MinLength(700)]
+    [MaxLength(700)]
     public string Description { get; set; }
 
     [Required]
-    [MinLength(30)]
+    [MaxLength(30)]
     public string Screenwriter { get; set; }
 
     public virtual ICollection<Cast> Casts { get; set; } = new HashSet<Cast>();

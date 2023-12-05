@@ -16,9 +16,9 @@ public class ImportPlayDto
     [Required]
     public string Duration { get; set; }
 
-    [XmlElement("Rating")]
     [Required]
-    [Range(0, 10)]
+    [Range(0.00, 10.00)]
+    [XmlElement("Raiting")]
     public float Rating { get; set; }
 
     [XmlElement("Genre")]
@@ -27,7 +27,7 @@ public class ImportPlayDto
 
     [XmlElement("Description")]
     [Required]
-    [MinLength(700)]
+    [MaxLength(700)]
     public string Description { get; set; }
 
     [XmlElement("Screenwriter")]

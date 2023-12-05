@@ -1,5 +1,6 @@
 ﻿namespace Theatre.DataProcessor
 {
+    using Newtonsoft.Json;
     using System.ComponentModel.DataAnnotations;
     using System.Globalization;
     using System.Text;
@@ -23,7 +24,6 @@
             = "Successfully imported theatre {0} with #{1} tickets!";
 
         private static XmlHelper xmlHelper;
-
 
         public static string ImportPlays(TheatreContext context, string xmlString)
         {
@@ -72,12 +72,89 @@
 
         public static string ImportCasts(TheatreContext context, string xmlString)
         {
-            throw new NotImplementedException();
+            StringBuilder stringBuilder = new StringBuilder();
+
+            xmlHelper = new XmlHelper();
+
+            ImportCastDto[] castDtos =
+                xmlHelper.Deserialize<ImportCastDto[]>(xmlString, "Casts");
+
+            ICollection<Cast> validCasts = new HashSet<Cast>();
+
+            foreach (ImportCastDto castDto in castDtos)
+            {
+
+                if (!IsValid(castDto))
+                {
+                    stringBuilder.AppendLine(ErrorMessage);
+                    continue;
+                }
+
+                Cast cast = new Cast()
+                {
+                    FullName = castDto.FullName,
+                    IsMainCharacter = bool.Parse(castDto.IsMainCharacter),
+                    PhoneNumber = castDto.PhoneNumber,
+                    PlayId = castDto.PlayId,
+                };
+
+                validCasts.Add(cast);
+                stringBuilder.AppendLine(string.Format(SuccessfulImportActor, cast.FullName, cast.IsMainCharacter == true? "main" : "lesser"));
+            }
+            context.Casts.AddRange(validCasts);
+            context.SaveChanges();
+
+            return stringBuilder.ToString().TrimEnd();
         }
 
         public static string ImportTtheatersTickets(TheatreContext context, string jsonString)
         {
-            throw new NotImplementedException();
+            StringBuilder stringBuilder = new StringBuilder();
+
+            ImportTheatreDto[] theatreDtos = JsonConvert.DeserializeObject<ImportTheatreDto[]>(jsonString);
+
+            ICollection<Theatre> validTheatres = new HashSet<Theatre>();
+
+            foreach (ImportTheatreDto theatreDto in theatreDtos)
+            {
+                if (!IsValid(theatreDto))
+                {
+                    stringBuilder.AppendLine(ErrorMessage);
+                    continue;
+                }
+
+                Theatre theatre = new Theatre()
+                {
+                    Name = theatreDto.Name,
+                    NumberOfHalls = theatreDto.NumberOfHalls,
+                    Director = theatreDto.Director
+                };
+
+                foreach (var ticketDto in theatreDto.Tickets)
+                {
+                    if (!IsValid(ticketDto))
+                    {
+                        stringBuilder.AppendLine(ErrorMessage);
+                        continue;
+                    }
+                    theatre.Tickets.Add(new Ticket
+                    {
+                        Price = ticketDto.Price,
+                        RowNumber = ticketDto.RowNumber,
+                        PlayId = ticketDto.PlayId
+                    });
+                }
+
+                validTheatres.Add(theatre);
+                stringBuilder.AppendLine(string.Format(SuccessfulImportTheatre, theatre.Name, theatre.Tickets.Count));
+
+            }
+
+            context.Theatres.AddRange(validTheatres);
+            context.SaveChanges();
+
+
+            return stringBuilder.ToString().TrimEnd();
         }
 
 

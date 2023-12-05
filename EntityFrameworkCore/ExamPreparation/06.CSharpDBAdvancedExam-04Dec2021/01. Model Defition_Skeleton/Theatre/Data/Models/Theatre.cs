@@ -22,7 +22,3 @@ public class Theatre
 
     public virtual ICollection<Ticket> Tickets { get; set; } = new HashSet<Ticket>();
 }
-
-//•	Name – text with length[4, 30] (required)
-//•	NumberOfHalls – sbyte between[1…10] (required)
-//•	Director – text with length[4, 30] (required)

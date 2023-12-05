@@ -26,6 +26,3 @@ public class Ticket
 
     public virtual Theatre Theatre { get; set; }
 }
-
-//•	Price – decimal in the range[1.00….100.00] (required)
-//•	RowNumber – sbyte in range[1….10] (required)

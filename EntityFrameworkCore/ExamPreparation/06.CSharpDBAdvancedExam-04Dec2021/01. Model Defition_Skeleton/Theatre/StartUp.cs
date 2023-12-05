@@ -38,14 +38,14 @@ namespace Theatre
                   File.ReadAllText(baseDir + "plays.xml"));
             PrintAndExportEntityToFile(theatersAndTickets, exportDir + "Actual Result - ImportPlays.txt");
 
-            //var casts = DataProcessor.Deserializer.ImportCasts(context,
-            //   File.ReadAllText(baseDir + "casts.xml"));
-            //PrintAndExportEntityToFile(casts, exportDir + "Actual Result - ImportCasts.txt");
+            var casts = DataProcessor.Deserializer.ImportCasts(context,
+               File.ReadAllText(baseDir + "casts.xml"));
+            PrintAndExportEntityToFile(casts, exportDir + "Actual Result - ImportCasts.txt");
 
-            //var plays =
-            //    DataProcessor.Deserializer.ImportTtheatersTickets(context,
-            //        File.ReadAllText(baseDir + "theatres-and-tickets.json"));
-            //PrintAndExportEntityToFile(plays, exportDir + "Actual Result - ImportTheatresTickets.txt");
+            var plays =
+                DataProcessor.Deserializer.ImportTtheatersTickets(context,
+                    File.ReadAllText(baseDir + "theatres-and-tickets.json"));
+            PrintAndExportEntityToFile(plays, exportDir + "Actual Result - ImportTheatresTickets.txt");
 
         }
 
