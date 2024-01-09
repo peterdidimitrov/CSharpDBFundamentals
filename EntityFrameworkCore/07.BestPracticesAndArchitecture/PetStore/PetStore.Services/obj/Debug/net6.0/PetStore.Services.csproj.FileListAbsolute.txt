@@ -10,3 +10,15 @@ C:\Users\Peter\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPractices
 C:\Users\Peter\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Services\obj\Debug\net6.0\refint\PetStore.Services.dll
 C:\Users\Peter\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Services\obj\Debug\net6.0\PetStore.Services.pdb
 C:\Users\Peter\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Services\obj\Debug\net6.0\ref\PetStore.Services.dll
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Services\bin\Debug\net6.0\PetStore.Services.deps.json
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Services\bin\Debug\net6.0\PetStore.Services.dll
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Services\bin\Debug\net6.0\PetStore.Services.pdb
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Services\obj\Debug\net6.0\PetStore.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Services\obj\Debug\net6.0\PetStore.Services.AssemblyInfoInputs.cache
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Services\obj\Debug\net6.0\PetStore.Services.AssemblyInfo.cs
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Services\obj\Debug\net6.0\PetStore.Services.csproj.CoreCompileInputs.cache
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Services\obj\Debug\net6.0\PetStore.Services.sourcelink.json
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Services\obj\Debug\net6.0\PetStore.Services.dll
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Services\obj\Debug\net6.0\refint\PetStore.Services.dll
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Services\obj\Debug\net6.0\PetStore.Services.pdb
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Services\obj\Debug\net6.0\ref\PetStore.Services.dll

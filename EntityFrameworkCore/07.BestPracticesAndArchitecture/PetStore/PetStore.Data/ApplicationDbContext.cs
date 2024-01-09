@@ -14,8 +14,9 @@
     using static System.Formats.Asn1.AsnWriter;
     using System.Dynamic;
     using System.Net;
+    using Microsoft.AspNetCore.Identity;
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
+    public class ApplicationDbContext : IdentityDbContext<IdentityUser, ApplicationRole, string>
     {
         private static readonly MethodInfo SetIsDeletedQueryFilterMethod =
             typeof(ApplicationDbContext).GetMethod(

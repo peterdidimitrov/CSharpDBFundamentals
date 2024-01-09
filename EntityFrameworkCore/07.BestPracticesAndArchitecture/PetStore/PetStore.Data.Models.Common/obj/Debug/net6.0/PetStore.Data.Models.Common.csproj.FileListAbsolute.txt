@@ -10,3 +10,15 @@ C:\Users\Peter\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPractices
 C:\Users\Peter\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Data.Models.Common\obj\Debug\net6.0\refint\PetStore.Data.Models.Common.dll
 C:\Users\Peter\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Data.Models.Common\obj\Debug\net6.0\PetStore.Data.Models.Common.pdb
 C:\Users\Peter\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Data.Models.Common\obj\Debug\net6.0\ref\PetStore.Data.Models.Common.dll
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Data.Models.Common\bin\Debug\net6.0\PetStore.Data.Models.Common.deps.json
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Data.Models.Common\bin\Debug\net6.0\PetStore.Data.Models.Common.dll
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Data.Models.Common\bin\Debug\net6.0\PetStore.Data.Models.Common.pdb
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Data.Models.Common\obj\Debug\net6.0\PetStore.Data.Models.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Data.Models.Common\obj\Debug\net6.0\PetStore.Data.Models.Common.AssemblyInfoInputs.cache
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Data.Models.Common\obj\Debug\net6.0\PetStore.Data.Models.Common.AssemblyInfo.cs
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Data.Models.Common\obj\Debug\net6.0\PetStore.Data.Models.Common.csproj.CoreCompileInputs.cache
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Data.Models.Common\obj\Debug\net6.0\PetStore.Data.Models.Common.sourcelink.json
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Data.Models.Common\obj\Debug\net6.0\PetStore.Data.Models.Common.dll
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Data.Models.Common\obj\Debug\net6.0\refint\PetStore.Data.Models.Common.dll
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Data.Models.Common\obj\Debug\net6.0\PetStore.Data.Models.Common.pdb
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Data.Models.Common\obj\Debug\net6.0\ref\PetStore.Data.Models.Common.dll

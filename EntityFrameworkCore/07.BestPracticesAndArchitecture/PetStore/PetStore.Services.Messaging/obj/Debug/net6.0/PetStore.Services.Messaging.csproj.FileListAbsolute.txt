@@ -11,3 +11,16 @@ C:\Users\Peter\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPractices
 C:\Users\Peter\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Services.Messaging\obj\Debug\net6.0\PetStore.Services.Messaging.pdb
 C:\Users\Peter\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Services.Messaging\obj\Debug\net6.0\ref\PetStore.Services.Messaging.dll
 C:\Users\Peter\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Services.Messaging\obj\Debug\net6.0\PetStore.Services.Messaging.csproj.AssemblyReference.cache
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Services.Messaging\bin\Debug\net6.0\PetStore.Services.Messaging.deps.json
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Services.Messaging\bin\Debug\net6.0\PetStore.Services.Messaging.dll
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Services.Messaging\bin\Debug\net6.0\PetStore.Services.Messaging.pdb
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Services.Messaging\obj\Debug\net6.0\PetStore.Services.Messaging.csproj.AssemblyReference.cache
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Services.Messaging\obj\Debug\net6.0\PetStore.Services.Messaging.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Services.Messaging\obj\Debug\net6.0\PetStore.Services.Messaging.AssemblyInfoInputs.cache
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Services.Messaging\obj\Debug\net6.0\PetStore.Services.Messaging.AssemblyInfo.cs
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Services.Messaging\obj\Debug\net6.0\PetStore.Services.Messaging.csproj.CoreCompileInputs.cache
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Services.Messaging\obj\Debug\net6.0\PetStore.Services.Messaging.sourcelink.json
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Services.Messaging\obj\Debug\net6.0\PetStore.Services.Messaging.dll
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Services.Messaging\obj\Debug\net6.0\refint\PetStore.Services.Messaging.dll
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Services.Messaging\obj\Debug\net6.0\PetStore.Services.Messaging.pdb
+C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Services.Messaging\obj\Debug\net6.0\ref\PetStore.Services.Messaging.dll
