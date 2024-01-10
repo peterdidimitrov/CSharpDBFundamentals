@@ -1,0 +1,27 @@
+﻿@model PetStore.Web.ViewModels.Categories.CreateCategoryInputModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create Category</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" class="form-horizontal">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" required="true" minlength="3" maxlength="30"/>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary" style="margin-top: 5px"/>Submit </button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

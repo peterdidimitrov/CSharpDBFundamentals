@@ -22,3 +22,15 @@ C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesA
 C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Web.ViewModels\obj\Debug\net6.0\refint\PetStore.Web.ViewModels.dll
 C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Web.ViewModels\obj\Debug\net6.0\PetStore.Web.ViewModels.pdb
 C:\Users\fuji\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Web.ViewModels\obj\Debug\net6.0\ref\PetStore.Web.ViewModels.dll
+C:\Users\Peter\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Web.ViewModels\bin\Debug\net6.0\PetStore.Common.dll
+C:\Users\Peter\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Web.ViewModels\bin\Debug\net6.0\PetStore.Common.pdb
+C:\Users\Peter\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Web.ViewModels\obj\Debug\net6.0\PetStore.Web.ViewModels.csproj.AssemblyReference.cache
+C:\Users\Peter\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Web.ViewModels\obj\Debug\net6.0\PetStore.Web.ViewModels.csproj.CopyComplete
+C:\Users\Peter\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Web.ViewModels\bin\Debug\net6.0\PetStore.Data.Common.dll
+C:\Users\Peter\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Web.ViewModels\bin\Debug\net6.0\PetStore.Data.Models.Common.dll
+C:\Users\Peter\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Web.ViewModels\bin\Debug\net6.0\PetStore.Data.Models.dll
+C:\Users\Peter\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Web.ViewModels\bin\Debug\net6.0\PetStore.Services.Mapping.dll
+C:\Users\Peter\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Web.ViewModels\bin\Debug\net6.0\PetStore.Data.Models.pdb
+C:\Users\Peter\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Web.ViewModels\bin\Debug\net6.0\PetStore.Services.Mapping.pdb
+C:\Users\Peter\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Web.ViewModels\bin\Debug\net6.0\PetStore.Data.Common.pdb
+C:\Users\Peter\Desktop\CSharpDBFundamentals\EntityFrameworkCore\07.BestPracticesAndArchitecture\PetStore\PetStore.Web.ViewModels\bin\Debug\net6.0\PetStore.Data.Models.Common.pdb

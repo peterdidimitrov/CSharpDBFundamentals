@@ -2900,11 +2900,22 @@
       },
       "PetStore.Services.Data/1.0.0": {
         "dependencies": {
+          "AutoMapper": "12.0.1",
           "PetStore.Data.Common": "1.0.0",
-          "PetStore.Data.Models": "1.0.0"
+          "PetStore.Data.Models": "1.0.0",
+          "PetStore.Services.Mapping": "1.0.0",
+          "PetStore.Web.ViewModels": "1.0.0"
         },
         "runtime": {
           "PetStore.Services.Data.dll": {}
+        }
+      },
+      "PetStore.Services.Mapping/1.0.0": {
+        "dependencies": {
+          "AutoMapper": "12.0.1"
+        },
+        "runtime": {
+          "PetStore.Services.Mapping.dll": {}
         }
       },
       "PetStore.Services.Messaging/1.0.0": {
@@ -2921,6 +2932,11 @@
         }
       },
       "PetStore.Web.ViewModels/1.0.0": {
+        "dependencies": {
+          "PetStore.Common": "1.0.0",
+          "PetStore.Data.Models": "1.0.0",
+          "PetStore.Services.Mapping": "1.0.0"
+        },
         "runtime": {
           "PetStore.Web.ViewModels.dll": {}
         }
@@ -4658,6 +4674,11 @@
       "sha512": ""
     },
     "PetStore.Services.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PetStore.Services.Mapping/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

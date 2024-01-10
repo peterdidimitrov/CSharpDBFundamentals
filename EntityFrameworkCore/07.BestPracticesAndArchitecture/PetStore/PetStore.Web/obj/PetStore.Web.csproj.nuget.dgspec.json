@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web\\PetStore.Web.csproj": {}
+    "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web\\PetStore.Web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Common\\PetStore.Common.csproj": {
+    "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Common\\PetStore.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Common\\PetStore.Common.csproj",
+        "projectUniqueName": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Common\\PetStore.Common.csproj",
         "projectName": "PetStore.Common",
-        "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Common\\PetStore.Common.csproj",
-        "packagesPath": "C:\\Users\\fuji\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Common\\obj\\",
+        "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Common\\PetStore.Common.csproj",
+        "packagesPath": "C:\\Users\\Peter\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\fuji\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Peter\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -63,20 +64,20 @@
         }
       }
     },
-    "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Common\\PetStore.Data.Common.csproj": {
+    "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Common\\PetStore.Data.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Common\\PetStore.Data.Common.csproj",
+        "projectUniqueName": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Common\\PetStore.Data.Common.csproj",
         "projectName": "PetStore.Data.Common",
-        "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Common\\PetStore.Data.Common.csproj",
-        "packagesPath": "C:\\Users\\fuji\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Common\\obj\\",
+        "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Common\\PetStore.Data.Common.csproj",
+        "packagesPath": "C:\\Users\\Peter\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\fuji\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Peter\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -85,6 +86,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -122,20 +124,20 @@
         }
       }
     },
-    "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models.Common\\PetStore.Data.Models.Common.csproj": {
+    "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models.Common\\PetStore.Data.Models.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models.Common\\PetStore.Data.Models.Common.csproj",
+        "projectUniqueName": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models.Common\\PetStore.Data.Models.Common.csproj",
         "projectName": "PetStore.Data.Models.Common",
-        "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models.Common\\PetStore.Data.Models.Common.csproj",
-        "packagesPath": "C:\\Users\\fuji\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models.Common\\obj\\",
+        "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models.Common\\PetStore.Data.Models.Common.csproj",
+        "packagesPath": "C:\\Users\\Peter\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\fuji\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Peter\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -144,6 +146,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -181,20 +184,20 @@
         }
       }
     },
-    "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models\\PetStore.Data.Models.csproj": {
+    "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models\\PetStore.Data.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models\\PetStore.Data.Models.csproj",
+        "projectUniqueName": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models\\PetStore.Data.Models.csproj",
         "projectName": "PetStore.Data.Models",
-        "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models\\PetStore.Data.Models.csproj",
-        "packagesPath": "C:\\Users\\fuji\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models\\obj\\",
+        "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models\\PetStore.Data.Models.csproj",
+        "packagesPath": "C:\\Users\\Peter\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\fuji\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Peter\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -203,17 +206,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Common\\PetStore.Data.Common.csproj": {
-                "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Common\\PetStore.Data.Common.csproj"
+              "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Common\\PetStore.Data.Common.csproj": {
+                "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Common\\PetStore.Data.Common.csproj"
               },
-              "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models.Common\\PetStore.Data.Models.Common.csproj": {
-                "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models.Common\\PetStore.Data.Models.Common.csproj"
+              "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models.Common\\PetStore.Data.Models.Common.csproj": {
+                "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models.Common\\PetStore.Data.Models.Common.csproj"
               }
             }
           }
@@ -253,20 +257,20 @@
         }
       }
     },
-    "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data\\PetStore.Data.csproj": {
+    "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data\\PetStore.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data\\PetStore.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data\\PetStore.Data.csproj",
         "projectName": "PetStore.Data",
-        "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data\\PetStore.Data.csproj",
-        "packagesPath": "C:\\Users\\fuji\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data\\obj\\",
+        "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data\\PetStore.Data.csproj",
+        "packagesPath": "C:\\Users\\Peter\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\fuji\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Peter\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -275,23 +279,24 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Common\\PetStore.Common.csproj": {
-                "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Common\\PetStore.Common.csproj"
+              "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Common\\PetStore.Common.csproj": {
+                "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Common\\PetStore.Common.csproj"
               },
-              "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Common\\PetStore.Data.Common.csproj": {
-                "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Common\\PetStore.Data.Common.csproj"
+              "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Common\\PetStore.Data.Common.csproj": {
+                "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Common\\PetStore.Data.Common.csproj"
               },
-              "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models.Common\\PetStore.Data.Models.Common.csproj": {
-                "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models.Common\\PetStore.Data.Models.Common.csproj"
+              "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models.Common\\PetStore.Data.Models.Common.csproj": {
+                "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models.Common\\PetStore.Data.Models.Common.csproj"
               },
-              "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models\\PetStore.Data.Models.csproj": {
-                "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models\\PetStore.Data.Models.csproj"
+              "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models\\PetStore.Data.Models.csproj": {
+                "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models\\PetStore.Data.Models.csproj"
               }
             }
           }
@@ -351,20 +356,20 @@
         }
       }
     },
-    "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Data\\PetStore.Services.Data.csproj": {
+    "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Data\\PetStore.Services.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Data\\PetStore.Services.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Data\\PetStore.Services.Data.csproj",
         "projectName": "PetStore.Services.Data",
-        "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Data\\PetStore.Services.Data.csproj",
-        "packagesPath": "C:\\Users\\fuji\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Data\\obj\\",
+        "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Data\\PetStore.Services.Data.csproj",
+        "packagesPath": "C:\\Users\\Peter\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\fuji\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Peter\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -373,17 +378,24 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Common\\PetStore.Data.Common.csproj": {
-                "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Common\\PetStore.Data.Common.csproj"
+              "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Common\\PetStore.Data.Common.csproj": {
+                "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Common\\PetStore.Data.Common.csproj"
               },
-              "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models\\PetStore.Data.Models.csproj": {
-                "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models\\PetStore.Data.Models.csproj"
+              "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models\\PetStore.Data.Models.csproj": {
+                "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models\\PetStore.Data.Models.csproj"
+              },
+              "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Mapping\\PetStore.Services.Mapping.csproj": {
+                "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Mapping\\PetStore.Services.Mapping.csproj"
+              },
+              "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web.ViewModels\\PetStore.Web.ViewModels.csproj": {
+                "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web.ViewModels\\PetStore.Web.ViewModels.csproj"
               }
             }
           }
@@ -397,6 +409,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -417,20 +435,20 @@
         }
       }
     },
-    "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Messaging\\PetStore.Services.Messaging.csproj": {
+    "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Mapping\\PetStore.Services.Mapping.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Messaging\\PetStore.Services.Messaging.csproj",
-        "projectName": "PetStore.Services.Messaging",
-        "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Messaging\\PetStore.Services.Messaging.csproj",
-        "packagesPath": "C:\\Users\\fuji\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Messaging\\obj\\",
+        "projectUniqueName": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Mapping\\PetStore.Services.Mapping.csproj",
+        "projectName": "PetStore.Services.Mapping",
+        "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Mapping\\PetStore.Services.Mapping.csproj",
+        "packagesPath": "C:\\Users\\Peter\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Mapping\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\fuji\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Peter\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -439,6 +457,79 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.435, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Messaging\\PetStore.Services.Messaging.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Messaging\\PetStore.Services.Messaging.csproj",
+        "projectName": "PetStore.Services.Messaging",
+        "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Messaging\\PetStore.Services.Messaging.csproj",
+        "packagesPath": "C:\\Users\\Peter\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Messaging\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Peter\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -482,20 +573,20 @@
         }
       }
     },
-    "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services\\PetStore.Services.csproj": {
+    "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services\\PetStore.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services\\PetStore.Services.csproj",
+        "projectUniqueName": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services\\PetStore.Services.csproj",
         "projectName": "PetStore.Services",
-        "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services\\PetStore.Services.csproj",
-        "packagesPath": "C:\\Users\\fuji\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services\\obj\\",
+        "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services\\PetStore.Services.csproj",
+        "packagesPath": "C:\\Users\\Peter\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\fuji\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Peter\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -504,6 +595,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -541,20 +633,20 @@
         }
       }
     },
-    "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web.Infrastructure\\PetStore.Web.Infrastructure.csproj": {
+    "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web.Infrastructure\\PetStore.Web.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web.Infrastructure\\PetStore.Web.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web.Infrastructure\\PetStore.Web.Infrastructure.csproj",
         "projectName": "PetStore.Web.Infrastructure",
-        "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web.Infrastructure\\PetStore.Web.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\fuji\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web.Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web.Infrastructure\\PetStore.Web.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Peter\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\fuji\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Peter\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -563,6 +655,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -600,20 +693,20 @@
         }
       }
     },
-    "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web.ViewModels\\PetStore.Web.ViewModels.csproj": {
+    "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web.ViewModels\\PetStore.Web.ViewModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web.ViewModels\\PetStore.Web.ViewModels.csproj",
+        "projectUniqueName": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web.ViewModels\\PetStore.Web.ViewModels.csproj",
         "projectName": "PetStore.Web.ViewModels",
-        "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web.ViewModels\\PetStore.Web.ViewModels.csproj",
-        "packagesPath": "C:\\Users\\fuji\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web.ViewModels\\obj\\",
+        "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web.ViewModels\\PetStore.Web.ViewModels.csproj",
+        "packagesPath": "C:\\Users\\Peter\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web.ViewModels\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\fuji\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Peter\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -622,97 +715,109 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web\\PetStore.Web.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web\\PetStore.Web.csproj",
-        "projectName": "PetStore.Web",
-        "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web\\PetStore.Web.csproj",
-        "packagesPath": "C:\\Users\\fuji\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\fuji\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Common\\PetStore.Common.csproj": {
-                "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Common\\PetStore.Common.csproj"
+              "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Common\\PetStore.Common.csproj": {
+                "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Common\\PetStore.Common.csproj"
               },
-              "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Common\\PetStore.Data.Common.csproj": {
-                "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Common\\PetStore.Data.Common.csproj"
+              "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models\\PetStore.Data.Models.csproj": {
+                "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models\\PetStore.Data.Models.csproj"
               },
-              "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models\\PetStore.Data.Models.csproj": {
-                "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models\\PetStore.Data.Models.csproj"
+              "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Mapping\\PetStore.Services.Mapping.csproj": {
+                "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Mapping\\PetStore.Services.Mapping.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web\\PetStore.Web.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web\\PetStore.Web.csproj",
+        "projectName": "PetStore.Web",
+        "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web\\PetStore.Web.csproj",
+        "packagesPath": "C:\\Users\\Peter\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Peter\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Common\\PetStore.Common.csproj": {
+                "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Common\\PetStore.Common.csproj"
               },
-              "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data\\PetStore.Data.csproj": {
-                "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data\\PetStore.Data.csproj"
+              "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Common\\PetStore.Data.Common.csproj": {
+                "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Common\\PetStore.Data.Common.csproj"
               },
-              "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Data\\PetStore.Services.Data.csproj": {
-                "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Data\\PetStore.Services.Data.csproj"
+              "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models\\PetStore.Data.Models.csproj": {
+                "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Models\\PetStore.Data.Models.csproj"
               },
-              "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Messaging\\PetStore.Services.Messaging.csproj": {
-                "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Messaging\\PetStore.Services.Messaging.csproj"
+              "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data\\PetStore.Data.csproj": {
+                "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data\\PetStore.Data.csproj"
               },
-              "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services\\PetStore.Services.csproj": {
-                "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services\\PetStore.Services.csproj"
+              "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Data\\PetStore.Services.Data.csproj": {
+                "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Data\\PetStore.Services.Data.csproj"
               },
-              "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web.Infrastructure\\PetStore.Web.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web.Infrastructure\\PetStore.Web.Infrastructure.csproj"
+              "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Messaging\\PetStore.Services.Messaging.csproj": {
+                "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Messaging\\PetStore.Services.Messaging.csproj"
               },
-              "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web.ViewModels\\PetStore.Web.ViewModels.csproj": {
-                "projectPath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web.ViewModels\\PetStore.Web.ViewModels.csproj"
+              "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services\\PetStore.Services.csproj": {
+                "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services\\PetStore.Services.csproj"
+              },
+              "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web.Infrastructure\\PetStore.Web.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web.Infrastructure\\PetStore.Web.Infrastructure.csproj"
+              },
+              "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web.ViewModels\\PetStore.Web.ViewModels.csproj": {
+                "projectPath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web.ViewModels\\PetStore.Web.ViewModels.csproj"
               }
             }
           }

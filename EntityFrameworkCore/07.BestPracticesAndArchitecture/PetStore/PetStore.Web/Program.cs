@@ -5,6 +5,10 @@ using Microsoft.EntityFrameworkCore;
 using Data;
     using PetStore.Data.Common.Repos;
     using PetStore.Data.Repositories;
+    using PetStore.Services.Data;
+    using PetStore.Services.Mapping;
+    using PetStore.Web.ViewModels;
+    using System.Reflection;
 
     public class Program
     {
@@ -70,7 +74,8 @@ using Data;
                 .Services
                 .AddControllersWithViews();
 
-            builder.Services.AddAutoMapper(typeof(Program));
+            //builder.Services.AddAutoMapper(typeof(Program));
+            AutoMapperConfig.RegisterMappings(typeof(ErrorViewModel).GetTypeInfo().Assembly);
 
             //Repositories
             builder
@@ -78,6 +83,11 @@ using Data;
 
             builder
                 .Services.AddScoped(typeof(IDeletableEntityRepository<>), typeof(EfDeletableEntityRepository<>));
+
+            //Services
+            builder
+                .Services
+                .AddTransient<ICategoryService, CategoryService>();
 
             WebApplication app = builder.Build();
 

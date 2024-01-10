@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "mp7mXTWzywnpG/j5qq93NYt0m8RfpsEaJoawKEbOIBuFy39KHQXi4BjgCDUlxKz0hzHNr7Mb3JjPOXlpxQRszg==",
+  "dgSpecHash": "o8nOLiKMHJBPhhggzoE+bxcDFvFjSkMt0RTuKhl5k8wVVah5oxR6Lubl75yP09ICboH9YHXrn4AdMDPbeEIdTw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\fuji\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Mapping\\PetStore.Services.Mapping.csproj",
+  "projectFilePath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Mapping\\PetStore.Services.Mapping.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\fuji\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
-    "C:\\Users\\fuji\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
-    "C:\\Users\\fuji\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.435\\stylecop.analyzers.1.2.0-beta.435.nupkg.sha512",
-    "C:\\Users\\fuji\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.435\\stylecop.analyzers.unstable.1.2.0.435.nupkg.sha512"
+    "C:\\Users\\Peter\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Peter\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\Peter\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.435\\stylecop.analyzers.1.2.0-beta.435.nupkg.sha512",
+    "C:\\Users\\Peter\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.435\\stylecop.analyzers.unstable.1.2.0.435.nupkg.sha512"
   ],
   "logs": []
 }
