@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PetStore.Services.Mapping")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+431dd3dc09f20583be26d93d4ce42519088199f2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6f3acb18b2804a01ff1b5d79493f1673725a2389")]
 [assembly: System.Reflection.AssemblyProductAttribute("PetStore.Services.Mapping")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PetStore.Services.Mapping")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
