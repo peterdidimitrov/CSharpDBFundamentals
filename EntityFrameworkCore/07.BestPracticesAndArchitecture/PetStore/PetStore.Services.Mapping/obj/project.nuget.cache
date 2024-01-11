@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "o8nOLiKMHJBPhhggzoE+bxcDFvFjSkMt0RTuKhl5k8wVVah5oxR6Lubl75yP09ICboH9YHXrn4AdMDPbeEIdTw==",
+  "dgSpecHash": "6We29yE9OfOS8NOIqT1j38dpgL1eUZ8HM9qnhkPz2/UvrTMaW0Dst7qJLDAN8i884ijOOxTUknj5E7a0ZdT79A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Mapping\\PetStore.Services.Mapping.csproj",
   "expectedPackageFiles": [

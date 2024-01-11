@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ofQpHPvo+oGjwEaqJf+kVJux4Z/0G0yYrrW825s3s7eZdM7Y5EEz/ZCbwxOTTKIWCiymKI5ofldTNqyBvbAgZw==",
+  "dgSpecHash": "qGu5xZpP0doH0ktfTIhKH6XUN8yaag8+ez4nggjXpPy5I6IHtrk91+dBB7a6gIBzw1ISfLhYgSj2xCpoVmR1uw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Services.Messaging\\PetStore.Services.Messaging.csproj",
   "expectedPackageFiles": [

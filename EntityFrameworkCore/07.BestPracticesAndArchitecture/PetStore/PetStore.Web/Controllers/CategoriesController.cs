@@ -1,6 +1,6 @@
 ﻿namespace PetStore.Web.Controllers
 {
-using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Mvc;
     using Microsoft.CodeAnalysis.CSharp.Syntax;
     using PetStore.Services.Data;
     using PetStore.Web.ViewModels.Categories;
@@ -25,7 +25,7 @@ using Microsoft.AspNetCore.Mvc;
         {
             if (!this.ModelState.IsValid)
             {
-                return this.RedirectToAction("Error", "Home", new {errorMessage = "There was an error with validation of the entity!"});
+                return this.RedirectToAction("Error", "Home", new { errorMessage = "There was an error with validation of the entity!" });
             }
 
             await this._categoryService.CreateAsync(model);
@@ -34,17 +34,62 @@ using Microsoft.AspNetCore.Mvc;
         }
 
         [HttpGet]
-        public async Task<IActionResult> All()
+        public async Task<IActionResult> All(int page)
         {
-            IEnumerable<ListAllCategoriesViewModel> allCategories = await this._categoryService.GetAllAsync();
+            IEnumerable<ListCategoryViewModel> allCategories = await this._categoryService.GetAllWithPaginationAsync(page);
 
-            return this.View(allCategories);
+            int allCategoriesCount = allCategories.Count();
+
+            ListAllCategoriesViewModel viewModel = new ListAllCategoriesViewModel()
+            {
+                AllCategories = allCategories,
+                PageCount = (int)Math.Ceiling(allCategoriesCount / 20.0),
+                AcrivePage = page
+            };
+
+            return this.View(viewModel);
         }
 
         [HttpGet]
-        public IActionResult Edit(string id)
+        public async Task<IActionResult> Edit(int id)
         {
+            bool isValidCategory = await this._categoryService.ExistsAsync(id);
 
+            if (!isValidCategory)
+            {
+                return this.RedirectToAction("All");
+            }
+
+            EditCategoryViewModel categoryToEdit = await this._categoryService
+                .GetByIdAndPrepareForEditAsync(id);
+
+            return this.View(categoryToEdit);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(EditCategoryViewModel model)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                return this.RedirectToAction("Error", "Home", new { errorMessage = "Validation error!" });
+            }
+
+            bool isValidCategory = await this._categoryService.ExistsAsync(model.Id);
+
+            if (!isValidCategory)
+            {
+                return this.RedirectToAction("All");
+            }
+
+            await this._categoryService.EditCategoryAsync(model);
+
+            return this.RedirectToAction("All");
+        }
+
+        //[HttpPost]
+        //public IActionResult Delete(int id)
+        //{
+        //    return "";
+        //}
     }
 }

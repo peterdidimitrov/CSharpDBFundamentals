@@ -18,21 +18,21 @@ namespace PetStore.Data.Models
 
         [Required]
         [MaxLength(ClientValidationConstants.NameMaxLength)]
-        public string FirstName { get; set; }
+        public string FirstName { get; set; } = null!;
 
         [Required]
         [MaxLength(ClientValidationConstants.NameMaxLength)]
-        public string LastName { get; set; }
+        public string LastName { get; set; } = null!;
 
         [ForeignKey(nameof(Address))]
-        public string AddressId { get; set; }
+        public string AddressId { get; set; } = null!;
 
-        public virtual Address Address { get; set; }
+        public virtual Address Address { get; set; } = null!;
 
         [ForeignKey(nameof(ClientCard))]
-        public string ClientCardId { get; set; }
+        public string ClientCardId { get; set; } = null!;
 
-        public virtual ClientCard ClientCard { get; set; }
+        public virtual ClientCard ClientCard { get; set; } = null!;
 
         public virtual ICollection<CardInfo> PaymentCards { get; set; }
 

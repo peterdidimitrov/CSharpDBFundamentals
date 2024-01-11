@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Eo3aQxtTiF83a3MatpLmlTmyKreh6s+YHLAMQ+krclXs8mpVttMzX3L059aQpQnSK8bAYglhH8dN5T6vA/g4Gg==",
+  "dgSpecHash": "OvstFe1RBtOIzhsbt5FNr1FIi9IgpNOD+J8EeNjty/dUlxkHYqsrPmG85WBWZsnIcB6nkYpxDowMppoqdytAyA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Data.Common\\PetStore.Data.Common.csproj",
   "expectedPackageFiles": [],

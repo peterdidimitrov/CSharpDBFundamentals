@@ -17,7 +17,7 @@ namespace PetStore.Data.Models
 
         [Required]
         [MaxLength(CategoryValidationConstants.NameMaxLength)]
-        public string Name { get; set; }
+        public string Name { get; set; } = null!;
 
         public virtual ICollection<Pet> Pets { get; set; }
 

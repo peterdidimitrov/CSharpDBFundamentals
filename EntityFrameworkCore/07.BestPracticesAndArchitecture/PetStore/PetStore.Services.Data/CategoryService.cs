@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using PetStore.Data.Common.Repos;
 using PetStore.Data.Models;
 using PetStore.Services.Mapping;
@@ -23,21 +22,46 @@ namespace PetStore.Services.Data
             await this._repository.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<ListAllCategoriesViewModel>> GetAllAsync()
+        public async Task<IEnumerable<ListCategoryViewModel>> GetAllAsync()
         {
             return await this._repository
                 .AllAsNoTracking()
-                .To<ListAllCategoriesViewModel>()
+                .To<ListCategoryViewModel>()
                 .ToArrayAsync();
         }
 
-        public async Task<EditCategoryViewModel> GetByIdAndPrepareFromEditAsync(int id)
+        public async Task<IEnumerable<ListCategoryViewModel>> GetAllWithPaginationAsync(int pageNumber)
+        {
+            return await this._repository
+                .AllAsNoTracking()
+                .Skip((pageNumber - 1) * 20)
+                .Take(20)
+                .To<ListCategoryViewModel>()
+                .ToArrayAsync();
+        }
+
+        public async Task<EditCategoryViewModel> GetByIdAndPrepareForEditAsync(int id)
         {
             Category categoryToEdit = await this._repository
                 .AllAsNoTracking()
                 .FirstAsync(c => c.Id == id);
 
-            return AutoMapperConfig.MapperInstance.Map<EditCategoryViewModel>(categoryToEdit);
+            return AutoMapperConfig
+                .MapperInstance
+                .Map<EditCategoryViewModel>(categoryToEdit);
         }
+        public async Task EditCategoryAsync(EditCategoryViewModel inputModel)
+        {
+            Category categoryToUpdate = await this._repository
+                .All()
+                .FirstAsync(c => c.Id == inputModel.Id);
+
+            categoryToUpdate.Name = inputModel.Name;
+            this._repository.Update(categoryToUpdate);
+            await this._repository.SaveChangesAsync();
+        }
+
+        public async Task<bool> ExistsAsync(int id) => await this._repository.AllAsNoTracking().AnyAsync(c => c.Id == id);
+
     }
 }

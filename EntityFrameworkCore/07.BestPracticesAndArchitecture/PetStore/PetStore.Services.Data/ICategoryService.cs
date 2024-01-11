@@ -6,8 +6,14 @@ namespace PetStore.Services.Data
     {
         Task CreateAsync(CreateCategoryInputModel inputModel);
 
-        Task<IEnumerable<ListAllCategoriesViewModel>> GetAllAsync();
+        Task<IEnumerable<ListCategoryViewModel>> GetAllAsync();
 
-        Task<EditCategoryViewModel> GetByIdAndPrepareFromEditAsync(int id);
+        Task<IEnumerable<ListCategoryViewModel>> GetAllWithPaginationAsync(int pageNumber);
+
+        Task<EditCategoryViewModel> GetByIdAndPrepareForEditAsync(int id);
+
+        Task EditCategoryAsync(EditCategoryViewModel inputModel);
+
+        Task<bool> ExistsAsync(int id);
     }
 }

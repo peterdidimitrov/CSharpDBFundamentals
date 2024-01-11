@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "a15GTq68sn+aHjp0CPWowicK7w0MeEZs9CmHvbhepC6pINjUOYRFd85XDVBOfvtvwJPn37UMrTGJ5K4vDPRpPg==",
+  "dgSpecHash": "0ddx/JrZgt0do3rY0Yxu+GqzXakTyP50Utyf0C4iLAFFL8bnwN7xr9sCPCt7PmX6nXk5XFHWrsDZ8zBvHqvgXA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Peter\\Desktop\\CSharpDBFundamentals\\EntityFrameworkCore\\07.BestPracticesAndArchitecture\\PetStore\\PetStore.Web.ViewModels\\PetStore.Web.ViewModels.csproj",
   "expectedPackageFiles": [
